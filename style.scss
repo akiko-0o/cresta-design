@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+@import 'reset';
+
+.header {
+    position: fixed;
+    top: 19px;  
+    left: 120px; 
+    width: 100%;                
+    height: 96px; 
+    display: flex;
+    h1 {
+        font-size: 26px;
+        color: #ffffff;
+        display: inline;
+    }
+    a {
+        font-size: 16px;
+        color: #ffffff;
+        
+    }
+    li {
+        display: inline;
+    }
+    nav {
+        right: 120px;
+    }
+}
+
