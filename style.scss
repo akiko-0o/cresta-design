@@ -8,10 +8,12 @@
     width: 100%;                
     height: 96px; 
     display: flex;
+    letter-spacing: 2px;
     h1 {
         font-size: 26px;
         color: #ffffff;
         display: inline;
+        letter-spacing: 2px;
     }
     a {
         font-size: 16px;
@@ -32,11 +34,15 @@
     padding: 100px 220px 70px 120px;
     .concept_title{
         font-size: 60px;
+        letter-spacing: 2px;
     }
     .concept_txt{
         margin: 70px;
         text-align: center;
         font-size: 30px;
+        letter-spacing: 3px;
+        width: 600px;
+        height: 95px;
     }
     .concept_sentence {
         width: 440px;
@@ -54,6 +60,7 @@
     .concept_subtitle {
         font-size: 90px;
         color: #171717;
+        opacity: 5%;
     }
 }
 
@@ -62,11 +69,24 @@
     img{
         width: 100%;
         height: 986px;
+
     }
     .works_title{
         font-size: 60px;
         color: #ffffff;
         position: absolute;
     }
+    .works_img {
+        width: 1000px;
+        height: 334px;
+    }
 }
 
+.footer {
+    width: 100%;
+    height: 79px;
+    .span {
+        text-align: center;
+        padding: 29px 580px;
+    }
+}

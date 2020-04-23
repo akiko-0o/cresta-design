@@ -8,6 +8,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./style.css">
+
 </head>
 
 <body class="boby">
@@ -98,10 +99,19 @@
             <h3 class="contact_subtitle">Contact us</h3>
         </div>
     </div>
-    
-    <footer>
+
+    <footer class="footer">
         <span>©︎cresta.design all rights reserved</span>
     </footer>
 
 </body>
 </html>
+
+<script>
+    $('.slider_img').slick({
+        autoplay:true,
+        autoplaySpeed:5000, 
+        dots:true,
+        slidesToShow:3,
+    });
+</script>
