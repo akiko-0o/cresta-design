@@ -26,3 +26,47 @@
     }
 }
 
+
+
+.concept {
+    padding: 100px 220px 70px 120px;
+    .concept_title{
+        font-size: 60px;
+    }
+    .concept_txt{
+        margin: 70px;
+        text-align: center;
+        font-size: 30px;
+    }
+    .concept_sentence {
+        width: 440px;
+        height: 146px;
+        font-size: 16px;
+    }
+    .concept_box {
+        display: inline;
+        img {
+            width: 100%;
+            height: 240px;
+            max-width: 440px;
+        }
+    }
+    .concept_subtitle {
+        font-size: 90px;
+        color: #171717;
+    }
+}
+
+.works {
+    position: relative;
+    img{
+        width: 100%;
+        height: 986px;
+    }
+    .works_title{
+        font-size: 60px;
+        color: #ffffff;
+        position: absolute;
+    }
+}
+
