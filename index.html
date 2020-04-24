@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>cresta design</title>
-    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
 
+    <!-- Font -->
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&display=swap" rel="stylesheet">
+    <!-- css -->
     <link rel="stylesheet" href="./style.css">
 
 </head>
@@ -25,18 +26,20 @@
     </header>
 
     <div class="slider">
-        <div class="slider_img">
-            <img src="./img/fv-bgi_01@2x.jpg" alt="">
-            <img src="./img/fv-bgi_02@2x.jpg" alt="">
-            <img src="./img/fv-bgi_03@2x.jpg" alt="">
-        </div>
+        <ul class="slider_img">
+            <li><img src="./img/fv-bgi_01@2x.jpg" alt=""></li>
+            <li><img src="./img/fv-bgi_02@2x.jpg" alt=""></li>
+            <li><img src="./img/fv-bgi_03@2x.jpg" alt=""></li>   
+        </ul>
+    </div>
+    s
         <div class="slider_logo">
             <h2>
                 <span>Design for Smile.</span>
                 <span>快適なオフィスをデザインする</span>
             </h2>
         </div>
-    </div>
+    
 
     <div class="wrap">
         <div class="concept">
@@ -104,14 +107,23 @@
         <span>©︎cresta.design all rights reserved</span>
     </footer>
 
+    <link href="./slick-theme.css" rel="stylesheet" type="text/css">
+    <link href="./slick.css" rel="stylesheet" type="text/css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="./slick.min.js"></script>
+    <script src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.9.0.min.js"></script>
+
+    <script>
+    $(function () {
+        $('.slider').slick({
+        autoplay:true,
+        autoplaySpeed: 6000, 
+        dots: false,
+        })
+    })
+
+</script>
+
 </body>
 </html>
 
-<script>
-    $('.slider_img').slick({
-        autoplay:true,
-        autoplaySpeed:5000, 
-        dots:true,
-        slidesToShow:3,
-    });
-</script>
