@@ -114,7 +114,9 @@ table {
 }
 
 .concept .concept_box {
-  display: inline;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .concept .concept_box img {
@@ -144,18 +146,17 @@ table {
   position: absolute;
 }
 
-.works .works_img {
+.works .work_images {
   width: 1000px;
   height: 334px;
 }
 
 .footer {
-  width: 100%;
+  text-align: center;
   height: 79px;
 }
 
-.footer .span {
-  text-align: center;
+.footer span {
   padding: 29px 580px;
 }
 /*# sourceMappingURL=style.css.map */
