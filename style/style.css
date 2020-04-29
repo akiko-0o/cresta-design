@@ -52,53 +52,77 @@ table {
   border-spacing: 0;
 }
 
-.header {
-  position: fixed;
-  top: 19px;
-  left: 120px;
+.body {
+  font-family: 'Noto Serif JP', serif;
+}
+
+.body .mv {
+  height: 100vh;
   width: 100%;
-  height: 96px;
+  position: relative;
+}
+
+.body .mv .slider {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.body .mv .slider .slide {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.body .mv .slider_logo {
+  position: relative;
+  top: 0px;
+}
+
+.body .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.body .header_inner {
+  margin: 19px 120px 0  120px;
+}
+
+.body .header a {
+  font-size: 20px;
+  text-decoration: none;
+  padding-right: 30px;
+  font-family: 'Noto Serif', serif;
+}
+
+.body .header li {
+  position: relative;
+  bottom: 35px;
+}
+
+.body .header_nav {
+  float: right;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  letter-spacing: 2px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
 }
 
-.header h1 {
-  font-size: 26px;
-  color: #ffffff;
-  display: inline;
-  letter-spacing: 2px;
-}
-
-.header a {
-  font-size: 16px;
-  color: #ffffff;
-}
-
-.header li {
-  display: inline;
-}
-
-.header nav {
-  right: 120px;
-}
-
-.slider {
-  width: 100%;
-  height: 752px;
-}
-
-.concept {
+.body .concept {
   padding: 100px 220px 70px 120px;
 }
 
-.concept .concept_title {
+.body .concept_title {
   font-size: 60px;
   letter-spacing: 2px;
 }
 
-.concept .concept_txt {
+.body .concept_txt {
   margin: 70px;
   text-align: center;
   font-size: 30px;
@@ -107,56 +131,46 @@ table {
   height: 95px;
 }
 
-.concept .concept_sentence {
+.body .concept_sentence {
   width: 440px;
   height: 146px;
   font-size: 16px;
 }
 
-.concept .concept_box {
+.body .concept_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
-.concept .concept_box img {
-  width: 100%;
-  height: 240px;
-  max-width: 440px;
+.body .concept_box img {
+  max-width: 100%;
+  height: auto;
 }
 
-.concept .concept_subtitle {
+.body .concept_subtitle {
   font-size: 90px;
   color: #171717;
   opacity: 5%;
 }
 
-.works {
+.body .works {
   position: relative;
 }
 
-.works img {
-  width: 100%;
-  height: 986px;
+.body .works img {
+  max-width: 100%;
+  height: auto;
 }
 
-.works .works_title {
+.body .works_title {
   font-size: 60px;
   color: #ffffff;
   position: absolute;
 }
 
-.works .work_images {
-  width: 1000px;
-  height: 334px;
-}
-
-.footer {
-  text-align: center;
-  height: 79px;
-}
-
-.footer span {
-  padding: 29px 580px;
+.body .works_images {
+  max-width: 100%;
+  height: auto;
 }
 /*# sourceMappingURL=style.css.map */

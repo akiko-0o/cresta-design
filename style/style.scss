@@ -1,0 +1,109 @@
+@charset 'UTF-8';
+@import './reset';
+
+.body{
+    font-family: 'Noto Serif JP', serif;
+
+    .mv{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+
+        .slider{
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+            .slide {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+
+        .slider_logo {
+            position: relative;
+            top: 0px;
+        }
+    }
+
+    .header {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+
+
+        &_inner {
+            margin: 19px 120px 0  120px;
+        }
+        a {
+            font-size: 20px;
+            text-decoration: none;
+            padding-right: 30px;
+            font-family: 'Noto Serif', serif;
+        }
+        li {
+            position: relative;
+            bottom: 35px;
+        
+        }
+        &_nav {
+            float: right;
+            display: flex;
+            align-items: center;
+            padding-top: 10px;
+        }
+    }
+
+    .concept {
+        padding: 100px 220px 70px 120px;
+        &_title{
+            font-size: 60px;
+            letter-spacing: 2px;
+        }
+        &_txt{
+            margin: 70px;
+            text-align: center;
+            font-size: 30px;
+            letter-spacing: 3px;
+            width: 600px;
+            height: 95px;
+        }
+        &_sentence {
+            width: 440px;
+            height: 146px;
+            font-size: 16px;
+        }
+        &_box {
+            display: flex;
+            img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+        &_subtitle {
+            font-size: 90px;
+            color: #171717;
+            opacity: 5%;
+        }
+    }
+
+    .works {
+        position: relative;
+        img{
+            max-width: 100%;
+            height: auto;
+        }
+        &_title{
+            font-size: 60px;
+            color: #ffffff;
+            position: absolute;
+        }
+        &_images {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+}
+
