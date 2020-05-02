@@ -56,6 +56,12 @@ table {
   font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 }
 
+.body img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
 .body .mv {
   height: 100vh;
   width: 100%;
@@ -106,18 +112,10 @@ table {
   margin: 19px 120px 0  120px;
 }
 
-.body .header a {
-  font-size: 20px;
-  text-decoration: none;
-  padding-right: 30px;
-  font-family: 'Noto Serif', serif;
-  color: #ffffff;
-  font-style: italic;
-}
-
-.body .header li {
-  position: relative;
-  bottom: 35px;
+.body .header_inner:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 .body .header_nav {
@@ -129,6 +127,20 @@ table {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 10px;
+}
+
+.body .header_nav li {
+  position: relative;
+  bottom: 35px;
+}
+
+.body .header_nav li a {
+  font-size: 20px;
+  text-decoration: none;
+  padding-right: 30px;
+  font-family: 'Noto Serif', serif;
+  color: #ffffff;
+  font-style: italic;
 }
 
 .body .wrap {

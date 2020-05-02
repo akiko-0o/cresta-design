@@ -4,6 +4,13 @@
 .body{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 
+
+    img{
+        max-width: 100%;
+        height: auto;
+        vertical-align: bottom;
+    }
+
     .mv{
         height: 100vh;
         width: 100%;
@@ -46,26 +53,35 @@
         left: 0;
         right: 0;
         z-index: 99;
+
         &_inner {
             margin: 19px 120px 0  120px;
+            &:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
         }
-        a {
-            font-size: 20px;
-            text-decoration: none;
-            padding-right: 30px;
-            font-family: 'Noto Serif', serif;
-            color: #ffffff;
-            font-style: italic;
-        }
-        li {
-            position: relative;
-            bottom: 35px;
-        }
+
         &_nav {
             float: right;
             display: flex;
             align-items: center;
             padding-top: 10px;
+
+            li {
+                position: relative;
+                bottom: 35px;
+
+                a {
+                    font-size: 20px;
+                    text-decoration: none;
+                    padding-right: 30px;
+                    font-family: 'Noto Serif', serif;
+                    color: #ffffff;
+                    font-style: italic;
+                }
+            }
         }
     }
 
@@ -140,7 +156,7 @@
             vertical-align: bottom;
             justify-content: space-around;
         }
-  
+
         &_title{
             position: absolute;
             top: 100px;
@@ -218,7 +234,7 @@
         }
         img {
             max-width: 100%;
-            height: auto; 
+            height: auto;
             position: relative;
         }
         &_txt {
@@ -240,4 +256,3 @@
     }
 
 }
-
