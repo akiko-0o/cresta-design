@@ -38,17 +38,23 @@
                 <div class="slide" style="background-image: url(./img/index/fv-bgi_03@2x.jpg);"></div>
         </div>
 
+        <!-- Check !! -->
+        <!-- わざわざ、slider_logoの中にh2を入れ子にしなくても良いです！ -->
         <div class="slider_logo">
             <h2>
-                <div class="slider_logo1">Design for Smile.<br></div>
-                <div class="slider_logo2">快適なオフィスをデザインする</div>
+                <span>Design for Smile.</span>
+                <span>快適なオフィスをデザインする</span>
             </h2>
         </div>
     </div>
-        <div class="wrap">
+
+    <div class="wrap">
+        <main>
             <section class="concept">
                 <div class="inner">
-                    <h3 class="concept_title">CONCEPT</h3>
+                    <!-- check !! -->
+                    <!-- buttonコンポーネント -->
+                    <h3 class="title">CONCEPT</h3>
                     <p class="concept_txt">"働きたくなる空間"をデザインすることで<br>
                         人々を幸せにする。
                     </p>
@@ -61,12 +67,13 @@
                     <h3 class="concept_subtitle">Our Concept</h3>
                 </div>
             </section>
-        </div>
 
             <section class="works">
-                <div class="works_backimg" style="background-image: url(./img/index/works-bgi@2x.jpg);"></div>
+                <div class="works_backimg" style="background-image: url(./img/index/works-bgi@2x.jpg);">
                     <div class="inner">
-                        <h3 class="works_title">Works</h3>
+                        <!-- check !! -->
+                        <!-- whiteクラスを使って、コンポーネントに別のプロパティを適用させる -->
+                        <h3 class="title white">Works</h3>
                         <ul class="works_images">
                             <li class="works_1">
                                 <a href="">
@@ -84,51 +91,64 @@
                                 </a>
                             </li>
                         </ul>
+                        <!-- check !! -->
+                        <a href="#" class="viewmore">View more</a>
+                        <h3 class="works_subtitle">Our Works</h3>
                     </div>
-                    <a href="#" class="viewmore">View more</a>
-                    <h3 class="works_subtitle">Our Works</h3>
+
+                    <!-- check !! -->
+                    <!-- .innerに入れてあげましょう -->
+                    <!-- <a href="#" class="viewmore">View more</a>
+                    <h3 class="works_subtitle">Our Works</h3> -->
                 </div>
             </section>
 
+            <section class="service">
+                <div class="inner">
+                    <h3 class="title">Service</h3>
+                    <ul class="service_images">
+                        <li>
+                            <a href="#">
+                                <img src="./img/index/service-img01@2x.jpg" alt="">
+                                <div class="service_txt">Hearing</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/index/service-img02@2x.jpg" alt="">
+                                <div class="service_txt">Planing</div>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="./img/index/sevice-img03@2x.jpg" alt="">
+                                <div class="service_txt">Direction</div>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <h3 class="service_subtitle">Our Service</h3>
+            </section>
 
-        <section class="service">
-            <div class="inner">
-                <h3 class="service_title">Service</h3>
-            </div>
-                <ul class="service_images">
-                    <li>
-                        <a href="#">
-                            <img src="./img/index/service-img01@2x.jpg" alt="">
-                            <div class="service_txt">Hearing</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/index/service-img02@2x.jpg" alt="">
-                            <div class="service_txt">Planing</div>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <img src="./img/index/sevice-img03@2x.jpg" alt="">
-                            <div class="service_txt">Direction</div>
-                        </a>
-                    </li>
-                </ul>
+            <!-- check !! -->
+            <!-- divではなく、sectionが適切です -->
+            <section class="contact">
+                <h3 class="title">Contact</h3>
 
+                <!-- check !! -->
+                <!-- 背景画像はbackground-image で設定しましょう！ -->
+                <img src="./img/index/contact-bgi@2x.jpg" alt="">
 
-                </ul>
-            </div>
-            <h3 class="service_subtitle">Our Service</h3>
-        </section>
+                <div class="contact_txt">お気軽にご相談ください。</div>
 
-        <div class="contact">
-            <h3 class="contact_title">Contact</h3>
-            <img src="./img/index/contact-bgi@2x.jpg" alt="">
-            <div class="contact_txt">お気軽にご相談ください。</div>
-            <a href="#" class="contact_btn">Contact</a>
-            <h3 class="contact_subtitle">Contact us</h3>
-        </div>
+                <!-- check !! -->
+                <!-- コンポーネント化できますね！ -->
+                <a href="#" class="contact_btn">Contact</a>
+
+                <h3 class="contact_subtitle">Contact us</h3>
+            </section>
+        </main>
+    </div>
 
     <footer class="footer">
         <span>©︎cresta.design all rights reserved</span>
@@ -148,6 +168,28 @@
             fade: true,
             draggable : true,
         })
+
+        // // オブジェクトを変数に格納
+        // header = $('header')
+
+        // // スクロールしたときの、処理を記述
+        // $(window).on('scroll', function(){
+        //     // スクロールした位置を取得
+        //     scroll = $(this).scrollTop()　
+
+        //     // スクロール位置が300を超えた時
+        //     if (scroll > 300){
+        //         if(!header.hasClass('fixed')){
+        //             // fixedクラスを与える
+        //             header.addClass('fixed')
+        //         }
+        //     } else {    // スクロール位置が300未満の時
+        //         if(header.hasClass('fixed')){
+        //             // fixedクラスを削除
+        //             header.removeClass('fixed')
+        //         }
+        //     }
+        // })
     })
 
 

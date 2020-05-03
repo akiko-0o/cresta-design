@@ -2,48 +2,32 @@
 @import './reset';
 
 .body{
+    // Check !!
+    // font-familyを指定するときは複数指定が基本
+    // 一番指定したいフォントから順番に指定する
+    // 日本語フォントより、英語フォントを優先して記述する
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 
-
-    img{
-        max-width: 100%;
-        height: auto;
-        // vertical-align: bottom;
+    // Check !!
+    // 中央寄せレイアウト
+    // .inner は今後も使うので、これを機に慣れてください！
+    .inner {
+        max-width: 1000px;
+        width: 100%;
+        margin: 0 auto;
     }
 
-    .mv{
-        height: 100vh;
-        width: 100%;
-        position: relative;
+    // Check !!
+    // タイトルをコンポーネント化
+    // cssの使い回しが利く箇所は、コンポーネント化（部品化）しましょう！
+    .title{
+        font-size: 60px;
+        letter-spacing: 2px;
+        font-style: italic;
+        font-weight: 800;
 
-        .slider{
-        position: relative;
-        width: 100%;
-        height: 100%;
-
-            .slide {
-                background-repeat: no-repeat;
-                background-size: cover;
-                background-position: center;
-                height: 100vh;
-            }
-        }
-
-        .slider_logo {
-            position: absolute;
-            top: 400px;
-            left: 125px;
-            color: #ffffff;
-            .slider_logo1 {
-                font-size: 70px;
-                letter-spacing: 4px;
-            }
-            .slider_logo2 {
-                font-size: 40px;
-                position: absolute;
-                top: 110px;
-                left: 15px;
-            }
+        &.white{
+            color: #FFF;
         }
     }
 
@@ -56,28 +40,29 @@
 
         &_inner {
             margin: 19px 120px 0  120px;
-            &:after{
-                content: '';
-                display: block;
-                clear: both;
-            }
+
+            // Check !!
+            // 横並びにする時は、flexもしくはfloatを使って対処しましょう！
+            display: flex;
+            // Check !!
+            // 横の位置関係を指定する時は：justify-content
+            // 縦の位置関係を指定する時は：align-items
+            justify-content: space-between;
         }
 
         &_nav {
-            float: right;
+            // float: right;
             display: flex;
             align-items: center;
             padding-top: 10px;
 
             li {
-                position: relative;
-                bottom: 35px;
-
                 a {
                     font-size: 20px;
                     text-decoration: none;
                     padding-right: 30px;
-                    font-family: 'Noto Serif', serif;
+                    // Check !!
+                    // bodyタグに記述すれば、bodyタグに含まれる全てのフォントにfont-familyが影響する
                     color: #ffffff;
                     font-style: italic;
                 }
@@ -85,39 +70,111 @@
         }
     }
 
+    .mv{
+        height: 100vh;
+        width: 100%;
+        position: relative;
+
+        .slider{
+            position: relative;
+            width: 100%;
+            height: 100%;
+
+            .slide {
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position: center;
+                height: 100vh;
+            }
+        }
+
+        .slider_logo {
+            position: absolute;
+            // Check !!
+            // mvの高さをvhで指定しているので、ブラウザによってmvの高さが変動します。
+            // 見出しの高さもそれに合わせて変動するよう, px ではなく%で指定すると良いです。
+            top: 54%;
+            left: 125px;
+            color: #ffffff;
+            text-align: center;
+
+            span{
+                display: block;
+
+                // Check !!
+                // 要素が複数ある時に、その中のどれかにcssを適用させたい時に使用します
+                // nth-child(順番)の他に、:first-child, :last-child なんかもあるので試してみてください！
+                &:nth-child(1){
+                    font-size: 70px;
+                }
+                &:nth-child(2){
+                    font-size: 40px;
+                    // 上下の間隔を調整する時は、positionではなく、
+                    // margin, paddginを使用してください
+                    // positionはレイアウトが崩れる原因なので、多様厳禁です！
+                    margin-top: 20px;
+                }
+            }
+        }
+    }
+
     .wrap {
             position: relative;
-            padding: 0 100px 0 100px;
-            min-width: 680px;
-            max-width: 820px;
+            // Check !!
+            // 0 100px 0 100px ⇨ 0 100px; です！
+            // padding: 0 100px 0 100px;
+
+            // Check !!
+            // これらの数字は何から算出しましか？
+            // min-width: 680px;
+            // max-width: 820px;
     }
 
     .concept {
         position: relative;
-        top: 75px;
-        &_title{
-            font-size: 60px;
-            letter-spacing: 2px;
-            font-style: italic;
-            font-weight: 800;
-        }
+        // Check !!
+        // みだりにpositionを使うとレイアウトが崩れます！
+        // まずpaddtingとmarginで対応できないか、検討しましょう！
+        // top: 75px;
+
         &_txt{
-            margin: 70px;
+            // Check !!
+            // 中央寄せする時は、marginの左右にauto
+            margin: 70px auto;
+
+            // Check !!
+            // テキストを中央よせする時
             text-align: center;
             font-size: 30px;
+
+            // Check !!
+            // デザインカンプ からの情報の抜き取り方
+            // 設定数 / 1000
             letter-spacing: 3px;
-            width: 630px;
-            height: 95px;
+
+            // Check !!
+            // デザインカンプ からの情報の抜き取り方
+            // 設定数 / フォントサイズ
             line-height: 1.8;
+
+            // Check !!
+            // 横幅を設定するのは画面幅を変えた時に、はみ出るので危険です！
+            // width: 630px;
+
+            // Check !!
+            // 縦幅を設定する必要はないです！
+            // height: 95px;
+
         }
         &_sentence {
             width: 370px;
-            height: 146px;
+            // height: 146px;
             font-size: 16px;
             line-height: 1.9;
         }
         &_box {
             display: flex;
+            align-items: center;
             img {
                 max-width: 60%;
                 height: auto;
@@ -138,33 +195,41 @@
 
     .works {
         position: relative;
-        top: 170px;
+
+        // Check !!
+        // みだりにpositionを使うとレイアウトが崩れます！
+        // まずpaddtingとmarginで対応できないか、検討しましょう！
+        // top: 170px;
+
         &_backimg {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
-            height: 100vh;
             position: relative;
         }
         &_images{
             display: flex;
             flex-direction: row;
-            position: absolute;
-            top: 170px;
+            // position: absolute;
+            // top: 170px;
             max-width: 100%;
             height: auto;
             vertical-align: bottom;
             justify-content: space-around;
+
+            > li {
+                width: calc((100% - 40px) / 3);
+                background-color: #FFF;
+
+                p{
+                    color: #000;
+                }
+            }
         }
 
-        &_title{
-            position: absolute;
-            top: 100px;
-            right: 230px;
-            font-size: 60px;
-            color: #ffffff;
-            font-style: italic;
-        }
+
+        // Check !!
+        // コンポーネント化（部品化）しましょう！
         .viewmore {
             display: inline-block;
             position: absolute;
@@ -181,32 +246,25 @@
             font-size: 90px;
             color: #FFFFFF;
             opacity: 10%;
-            position: absolute;
-            top: 800px;
-            left: 30px;
+
+            // Check !!
+            // position: absolute;
+            // top: 800px;
+            // left: 30px;
         }
 
     }
 
     .service {
-        margin-top: 300px;
+        // margin-top: 300px;
         padding-top: 0;
         position: relative;
-        &_title {
-            padding: 50px 10px;
-            font-size: 60px;
-            letter-spacing: 2px;
-            font-style: italic;
-            font-weight: 800;
-            position: absolute;
-            top: -100px;
-            left: 120px;
-        }
+
         img {
             display: flex;
             flex-direction: row;
-            position: absolute;
-            top: 65px;
+            // position: absolute;
+            // top: 65px;
             max-width: 100%;
             height: auto;
             vertical-align: bottom;
@@ -223,15 +281,8 @@
         }
     }
     .contact {
-        margin-top: 750px;
-        &_title {
-            position: relative;
-            top: 140px;
-            left:500px;
-            font-size: 60px;
-            color: #ffffff;
-            font-style: italic;
-        }
+        // margin-top: 750px;
+
         img {
             max-width: 100%;
             height: auto;
@@ -239,13 +290,13 @@
         }
         &_txt {
             color: #ffffff;
-            position: absolute;
+            // position: absolute;
         }
         &_btn {
             display: inline-block;
-            position: absolute;
-            top: 700px;
-            left: 400px;
+            // position: absolute;
+            // top: 700px;
+            // left: 400px;
             padding: 20px 60px;
             border-radius: 30px;
             text-decoration: none;
@@ -254,5 +305,4 @@
             transition: .4s;
         }
     }
-
 }

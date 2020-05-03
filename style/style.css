@@ -1,4 +1,4 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
+/* http://meyerweb.com/eric/tools/css/reset/
    v2.0 | 20110126
    License: none (public domain)
 */
@@ -52,13 +52,71 @@ table {
   border-spacing: 0;
 }
 
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
 .body {
   font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 }
 
-.body img {
-  max-width: 100%;
-  height: auto;
+.body .inner {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.body .title {
+  font-size: 60px;
+  letter-spacing: 2px;
+  font-style: italic;
+  font-weight: 800;
+}
+
+.body .title.white {
+  color: #FFF;
+}
+
+.body .header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99;
+}
+
+.body .header_inner {
+  margin: 19px 120px 0  120px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.body .header_nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding-top: 10px;
+}
+
+.body .header_nav li a {
+  font-size: 20px;
+  text-decoration: none;
+  padding-right: 30px;
+  color: #ffffff;
+  font-style: italic;
 }
 
 .body .mv {
@@ -82,98 +140,43 @@ table {
 
 .body .mv .slider_logo {
   position: absolute;
-  top: 400px;
+  top: 54%;
   left: 125px;
   color: #ffffff;
+  text-align: center;
 }
 
-.body .mv .slider_logo .slider_logo1 {
-  font-size: 70px;
-  letter-spacing: 4px;
-}
-
-.body .mv .slider_logo .slider_logo2 {
-  font-size: 40px;
-  position: absolute;
-  top: 110px;
-  left: 15px;
-}
-
-.body .header {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 99;
-}
-
-.body .header_inner {
-  margin: 19px 120px 0  120px;
-}
-
-.body .header_inner:after {
-  content: '';
+.body .mv .slider_logo span {
   display: block;
-  clear: both;
 }
 
-.body .header_nav {
-  float: right;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  padding-top: 10px;
+.body .mv .slider_logo span:nth-child(1) {
+  font-size: 70px;
 }
 
-.body .header_nav li {
-  position: relative;
-  bottom: 35px;
-}
-
-.body .header_nav li a {
-  font-size: 20px;
-  text-decoration: none;
-  padding-right: 30px;
-  font-family: 'Noto Serif', serif;
-  color: #ffffff;
-  font-style: italic;
+.body .mv .slider_logo span:nth-child(2) {
+  font-size: 40px;
+  margin-top: 20px;
 }
 
 .body .wrap {
   position: relative;
-  padding: 0 100px 0 100px;
-  min-width: 680px;
-  max-width: 820px;
 }
 
 .body .concept {
   position: relative;
-  top: 75px;
-}
-
-.body .concept_title {
-  font-size: 60px;
-  letter-spacing: 2px;
-  font-style: italic;
-  font-weight: 800;
 }
 
 .body .concept_txt {
-  margin: 70px;
+  margin: 70px auto;
   text-align: center;
   font-size: 30px;
   letter-spacing: 3px;
-  width: 630px;
-  height: 95px;
   line-height: 1.8;
 }
 
 .body .concept_sentence {
   width: 370px;
-  height: 146px;
   font-size: 16px;
   line-height: 1.9;
 }
@@ -182,6 +185,9 @@ table {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .body .concept_box img {
@@ -203,14 +209,12 @@ table {
 
 .body .works {
   position: relative;
-  top: 170px;
 }
 
 .body .works_backimg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
   position: relative;
 }
 
@@ -222,8 +226,6 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: absolute;
-  top: 170px;
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
@@ -231,13 +233,13 @@ table {
       justify-content: space-around;
 }
 
-.body .works_title {
-  position: absolute;
-  top: 100px;
-  right: 230px;
-  font-size: 60px;
-  color: #ffffff;
-  font-style: italic;
+.body .works_images > li {
+  width: calc((100% - 40px) / 3);
+  background-color: #FFF;
+}
+
+.body .works_images > li p {
+  color: #000;
 }
 
 .body .works .viewmore {
@@ -258,26 +260,11 @@ table {
   font-size: 90px;
   color: #FFFFFF;
   opacity: 10%;
-  position: absolute;
-  top: 800px;
-  left: 30px;
 }
 
 .body .service {
-  margin-top: 300px;
   padding-top: 0;
   position: relative;
-}
-
-.body .service_title {
-  padding: 50px 10px;
-  font-size: 60px;
-  letter-spacing: 2px;
-  font-style: italic;
-  font-weight: 800;
-  position: absolute;
-  top: -100px;
-  left: 120px;
 }
 
 .body .service img {
@@ -288,8 +275,6 @@ table {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: absolute;
-  top: 65px;
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
@@ -307,19 +292,6 @@ table {
   z-index: 99;
 }
 
-.body .contact {
-  margin-top: 750px;
-}
-
-.body .contact_title {
-  position: relative;
-  top: 140px;
-  left: 500px;
-  font-size: 60px;
-  color: #ffffff;
-  font-style: italic;
-}
-
 .body .contact img {
   max-width: 100%;
   height: auto;
@@ -328,14 +300,10 @@ table {
 
 .body .contact_txt {
   color: #ffffff;
-  position: absolute;
 }
 
 .body .contact_btn {
   display: inline-block;
-  position: absolute;
-  top: 700px;
-  left: 400px;
   padding: 20px 60px;
   border-radius: 30px;
   text-decoration: none;
