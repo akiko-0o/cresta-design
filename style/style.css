@@ -225,6 +225,12 @@ html .body .works_backimg {
   height: 100vh;
 }
 
+html .body .works img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
 html .body .works_images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -233,9 +239,9 @@ html .body .works_images {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  position: absolute;
   top: 170px;
   height: auto;
+  width: calc((100% - 40px) / 3);
   -ms-flex-pack: distribute;
       justify-content: space-around;
 }
