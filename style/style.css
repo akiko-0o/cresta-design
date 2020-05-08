@@ -71,7 +71,6 @@ html .body .title {
   letter-spacing: 2px;
   font-style: italic;
   font-weight: 800;
-  position: relative;
 }
 
 html .body .title:after {
@@ -80,9 +79,8 @@ html .body .title:after {
   height: 5px;
   background-color: #171717;
   display: inline-block;
-  position: relative;
-  bottom: 20px;
   margin-left: 30px;
+  margin-bottom: 17px;
 }
 
 html .body .title.white {
@@ -99,11 +97,15 @@ html .body .subtitle {
   color: #171717;
   opacity: 5%;
   float: right;
+  margin-top: 70px;
+  margin-bottom: 70px;
   z-index: 99;
 }
 
 html .body .subtitle.left {
+  margin-top: 140px;
   float: left;
+  color: #ffffff;
 }
 
 html .body .header {
@@ -213,7 +215,7 @@ html .body .concept_box img {
 }
 
 html .body .works {
-  clear: none;
+  margin-top: 70px;
   position: relative;
   top: 170px;
 }
@@ -222,7 +224,8 @@ html .body .works_backimg {
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  max-width: 100%;
+  height: auto;
 }
 
 html .body .works img {
@@ -239,11 +242,25 @@ html .body .works_images {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  top: 170px;
+  max-width: 1000px;
   height: auto;
-  width: calc((100% - 40px) / 3);
+  margin-bottom: 80px;
+  margin-top: 80px;
   -ms-flex-pack: distribute;
       justify-content: space-around;
+}
+
+html .body .works_images p {
+  background-color: #FFF;
+  height: 134px;
+  font-size: 1.6em;
+  color: black;
+  line-height: 1.8;
+  padding: 25px 20px;
+}
+
+html .body .works_images > li {
+  width: calc((100% - 40px) / 3);
 }
 
 html .body .works_images a {
@@ -255,6 +272,12 @@ html .body .service {
   padding-top: 0;
 }
 
+html .body .service img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
 html .body .service_images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -264,6 +287,8 @@ html .body .service_images {
       -ms-flex-direction: row;
           flex-direction: row;
   padding-top: 80px;
+  padding-bottom: 120px;
+  position: relative;
   top: 65px;
   max-width: 100%;
   height: auto;
@@ -275,6 +300,10 @@ html .body .service_images {
 html .body .service_txt {
   text-align: center;
   font-size: 4em;
+  position: absolute;
+  bottom: 230px;
+  padding-left: 120px;
+  color: #FFF;
 }
 
 html .body .service a {
@@ -282,16 +311,25 @@ html .body .service a {
 }
 
 html .body .contact {
-  margin-top: 100px;
+  clear: none;
+  margin-top: 200px;
 }
 
 html .body .contact_txt {
   color: #ffffff;
+  text-align: center;
+  padding: 594px 271px 40px 271px;
+  font-size: 2.0em;
 }
 
 html .body .contact .img {
   max-width: 100%;
-  height: 100vh;
+  height: auto;
+  vertical-align: bottom;
+}
+
+html .body .contact_btn {
+  text-align: center;
 }
 
 html .body .botton {
@@ -304,6 +342,7 @@ html .body .botton {
   -webkit-transition: .4s;
   transition: .4s;
   font-size: 1.6em;
+  margin-bottom: 262px;
 }
 
 html .body .footer {
