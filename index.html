@@ -13,7 +13,7 @@
 
 
 <body class="body">
-    <header class="header">   
+    <header class="header">
         <div class="header_inner">
             <h1 class="header_logo">
                 <a href="#">
@@ -28,16 +28,20 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-        </div> 
+        </div>
     </header>
 
     <div class="mv">
+        <!-- Check!! -->
+        <!-- インデントがずれている -->
             <div class="slider">
                 <div class="slide" style="background-image: url(./img/index/fv-bgi_01@2x.jpg);"></div>
                 <div class="slide" style="background-image: url(./img/index/fv-bgi_02@2x.jpg);"></div>
                 <div class="slide" style="background-image: url(./img/index/fv-bgi_03@2x.jpg);"></div>
             </div>
 
+            <!-- Check!! -->
+            <!-- divではなく、見出しタグが適切です！ -->
             <div class="slider_logo">
                 <div class="slider_logo1">Design for Smile.<br></div>
                 <div class="slider_logo2">快適なオフィスをデザインする</div>
@@ -55,18 +59,25 @@
                         <p class="concept_sentence">
                              私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな思いの株式会社Creasta Designだからこそできる空間デザインを提供させていただきます。
                         </p>
-                        <img src="./img/index/concept-image@2x.jpg" alt="">
+                        <!-- Check!! -->
+                        <!-- <div>で囲んであげれば大丈夫です！ -->
+                        <div class="concept_img">
+                            <img src="./img/index/concept-image@2x.jpg" alt="">
+                        </div>
                     </div>
-                        <h3 class="subtitle">Our Concept</h3>
+                    <h3 class="subtitle">Our Concept</h3>
                 </section>
             </div>
-        
+
 
             <section class="works">
                 <div class="works_backimg" style="background-image: url(./img/index/works-bgi@2x.jpg);">
                     <div class="inner">
                         <h3 class="title white">Works</h3>
                             <ul class="works_images">
+
+                                <!-- Check!! -->
+                                <!-- このクラスは不要 -->
                                 <li class="works_1">
                                     <a href="">
                                         <img src="./img/index/card-img01@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
@@ -80,15 +91,15 @@
                                 <li class="works_1">
                                     <a href="">
                                         <img src="./img/index/card-img03@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                                    </a>  
+                                    </a>
                                 </li>
                             </ul>
                         <a href="#" class="botton">View more</a>
                         <h3 class="subtitle left">Our Works</h3>
                     </div>
-                
+
             </section>
-        
+
 
         <section class="service">
             <div class="inner">
@@ -111,7 +122,7 @@
                         <a href="#">
                             <img src="./img/index/sevice-img03@2x.jpg" alt="">
                             <div class="service_txt">Direction</div>
-                        </a>  
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -119,9 +130,11 @@
         </section>
 
         <section class="contact">
-            <h3 class="title white">Contact</h3>
             <div class="img" style="background-image: url(./img/index/contact-bgi@2x.jpg);">
                 <div class="inner">
+                    <h3 class="title white">Contact</h3>
+
+
                     <div class="contact_txt">お気軽にご相談ください。</div>
                     <div class="contact_btn">
                         <a href="#" class="botton">Contact</a>
@@ -138,7 +151,7 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    
+
     <script>
     $(function () {
         $('.slider').slick({
@@ -157,4 +170,3 @@
 
 </body>
 </html>
- 

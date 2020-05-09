@@ -2,18 +2,32 @@
 @import './reset';
 html{
     font-size: 62.5%;
-  
+
 .body{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
-    
-    // コンポーネント化
+
+    // Check!!
+    // これはコンポーネントではなく、レイアウトですね！
     .inner {
         max-width: 1000px;
         width: 100%;
         margin: 0 auto;
     }
 
+    // Check!!
+    // imgの初期設定は全体に及ぶように記述しましょう！
+    img{
+        max-width: 100%;
+        height: auto;
+        vertical-align: bottom;
+    }
 
+    // aの初期設定は全体に及ぶように記述しましょう！
+    a {
+        text-decoration: none;
+    }
+
+    // コンポーネント化
     .title {
         font-size: 6em;
         letter-spacing: 2px;
@@ -58,22 +72,27 @@ html{
     }
 
     // スタイル
-    
+
     .header {
+        // Check!!
+        // absolute では、横幅が担保できないので、設定しましょう!
         position: absolute;
-        // display: flex;
-        // justify-content: space-between;
-        // top: 0px;
         // left: 0;
         // right: 0;
-        // display: flex;
-        // justify-content: space-between;
+        width: 100%;
+
         z-index: 99;
         &_inner {
-            margin: 19px 120px 0  120px;
+            // Check!!
+            // margin　ではなく　padding が正しいです！
+            // margin: 19px 120px 0  120px;
+            padding: 19px 120px 0  120px;
             display: flex;
             justify-content: space-between;
         }
+
+        // Check!!
+        // aタグの影響範囲が広すぎます！
         a {
             font-size: 1.8em;
             text-decoration: none;
@@ -92,7 +111,13 @@ html{
             display: flex;
             float: right;
             // align-items: center;
+
+            // Check!!
+            // align-items: center;でも対応可能
             padding-top: 10px;
+
+            // Check!!
+            // いらない
             padding-left: 250px;
             // padding-left: 500px;
         }
@@ -121,6 +146,10 @@ html{
             top: 54%;
             left: 8%;
             color: #ffffff;
+
+            // Check!!
+            // divは適切ではない
+            // :nth-child() を使うとスッキリします！
             .slider_logo1 {
                 font-size: 7em;
                 letter-spacing: 4px;
@@ -128,6 +157,9 @@ html{
             .slider_logo2 {
                 font-size: 4em;
                 margin-top: 31px;
+
+                // Check!!
+                // 中央寄せは text-align: center;
                 margin-left: 8%;
             }
         }
@@ -144,6 +176,7 @@ html{
         // position: relative;
         // top: 75px;
         margin-top: 75px;
+
         &_txt{
             margin: 70px;
             text-align: center;
@@ -161,21 +194,44 @@ html{
         }
         &_box {
             display: flex;
-            img {
-                max-width: 60%;
-                height: auto;
-                // position: relative;
-                margin-left: 120px;
-                vertical-align: bottom;
-            }
+
+            // Check!!
+            align-items: center;
+
+            // Check!!
+            // imgの初期設定は全体に及ぶように記述しましょう！
+            // img {
+            //     max-width: 60%;
+            //     height: auto;
+            //     position: relative;
+            //     margin-left: 120px;
+            //     vertical-align: bottom;
+            // }
+        }
+
+        // Check!!
+        &_sentence{
+            width: 56%;
+            padding-right: 12%;
+        }
+        &_img{
+            width: 44%;
         }
     }
 
     .works {
+        // Check!!
+        // この記述は？
         clear: none;
+
         margin-top: 70px;
+
+        // Check!!
+        // 不要です！
+        // floatはclearfixで回避しましょう！
         position: relative;
         top: 170px;
+
         &_backimg {
             background-repeat: no-repeat;
             background-size: cover;
@@ -184,45 +240,68 @@ html{
             height: auto;
             // height: 100vh;
             // position: relative;
-        }
-        img{
-            max-width: 100%;
-            height: auto;
-            vertical-align: bottom;
+
+            .inner:after{
+                content: '';
+                display: block;
+                clear: both;
+            }
         }
 
-    
+        // Check!!
+        // これも不要です！
+        // img{
+        //     max-width: 100%;
+        //     height: auto;
+        //     vertical-align: bottom;
+        // }
+
 
         &_images{
             display: flex;
+
+            // Check!!
+            // 初期値なので、この記述は不要
             flex-direction: row;
+
             // position: absolute;
             // top: 170px;
-            max-width: 1000px;
+
+            // Check!!
+            // width: 100%; が適切です！
+            // max-width: 1000px;
+            width: 100%;
             height: auto;
+
             margin-bottom: 80px;
             margin-top: 80px;
             // vertical-align: bottom;
             justify-content: space-around;
+
+
+            // Check!!
+            // li の中に書いた方がわかりやすいです！
             p {
                 background-color: #FFF;
+
+                // Check!!
+                // Heightの指定は不要です！
                 height: 134px;
                 font-size: 1.6em;
                 color: black;
                 line-height: 1.8;
                 padding: 25px 20px;
             }
-            
+
             > li {
                 width: calc((100% - 40px) / 3);
             }
-            
-            a {
-                text-decoration: none;
-            }
-        }
 
-        
+            // 初期なんで、影響範囲を広げましょう！
+            // a {
+            //     text-decoration: none;
+            // }
+        }
     }
 
     .service {
@@ -235,13 +314,16 @@ html{
             height: auto;
             vertical-align: bottom;
         }
-        
+
         &_images {
             display: flex;
             flex-direction: row;
             padding-top: 80px;
             padding-bottom: 120px;
             position: relative;
+
+            // Check!!
+            // 間隔を開けるためなら、paddingを使いましょう！
             top: 65px;
             max-width: 100%;
             height: auto;
@@ -249,8 +331,8 @@ html{
             justify-content: space-around;
         }
 
-        
-   
+
+
         &_txt {
             text-align: center;
             font-size: 4em;
@@ -258,7 +340,7 @@ html{
             bottom: 230px;
             padding-left: 120px;
             color: #FFF;
-            
+
         }
         a {
             text-decoration: none;
@@ -279,7 +361,7 @@ html{
             max-width: 100%;
             height: auto;
             vertical-align: bottom;
-            // height: 100%; 
+            // height: 100%;
             // // position: relative;
             // vertical-align: bottom;
         }
@@ -301,7 +383,7 @@ html{
         transition: .4s;
         font-size: 1.6em;
         margin-bottom: 262px;
-        
+
     }
     .footer {
         background-color: #FFF;

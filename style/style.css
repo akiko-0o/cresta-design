@@ -66,6 +66,16 @@ html .body .inner {
   margin: 0 auto;
 }
 
+html .body img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+html .body a {
+  text-decoration: none;
+}
+
 html .body .title {
   font-size: 6em;
   letter-spacing: 2px;
@@ -110,11 +120,12 @@ html .body .subtitle.left {
 
 html .body .header {
   position: absolute;
+  width: 100%;
   z-index: 99;
 }
 
 html .body .header_inner {
-  margin: 19px 120px 0  120px;
+  padding: 19px 120px 0  120px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -206,13 +217,18 @@ html .body .concept_box {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
-html .body .concept_box img {
-  max-width: 60%;
-  height: auto;
-  margin-left: 120px;
-  vertical-align: bottom;
+html .body .concept_sentence {
+  width: 56%;
+  padding-right: 12%;
+}
+
+html .body .concept_img {
+  width: 44%;
 }
 
 html .body .works {
@@ -230,10 +246,10 @@ html .body .works_backimg {
   height: auto;
 }
 
-html .body .works img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
+html .body .works_backimg .inner:after {
+  content: '';
+  display: block;
+  clear: both;
 }
 
 html .body .works_images {
@@ -244,7 +260,7 @@ html .body .works_images {
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  max-width: 1000px;
+  width: 100%;
   height: auto;
   margin-bottom: 80px;
   margin-top: 80px;
@@ -263,10 +279,6 @@ html .body .works_images p {
 
 html .body .works_images > li {
   width: calc((100% - 40px) / 3);
-}
-
-html .body .works_images a {
-  text-decoration: none;
 }
 
 html .body .service {
