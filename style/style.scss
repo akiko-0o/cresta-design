@@ -34,7 +34,6 @@ html{
         &.white{
             color: white;
             text-align: right;
-
             &:after{
                 background-color: #FFF;
             }
@@ -308,6 +307,9 @@ html{
         background-color: #FFF;
         font-size: 1.4em;
         padding: 29px;
+        span {
+        text-align: center;
+        }
     }
 
 }

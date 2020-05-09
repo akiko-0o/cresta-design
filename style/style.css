@@ -352,4 +352,8 @@ html .body .footer {
   font-size: 1.4em;
   padding: 29px;
 }
+
+html .body .footer span {
+  text-align: center;
+}
 /*# sourceMappingURL=style.css.map */
