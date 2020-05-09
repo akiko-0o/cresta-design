@@ -145,6 +145,7 @@ html .body .header_nav {
   display: flex;
   float: right;
   padding-top: 10px;
+  padding-left: 250px;
 }
 
 html .body .mv {
@@ -215,6 +216,7 @@ html .body .concept_box img {
 }
 
 html .body .works {
+  clear: none;
   margin-top: 70px;
   position: relative;
   top: 170px;
