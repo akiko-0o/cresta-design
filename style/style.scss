@@ -14,6 +14,12 @@ html{
         margin: 0 auto;
     }
 
+    .inner-large{
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
     // Check!!
     // imgの初期設定は全体に及ぶように記述しましょう！
     img{
@@ -42,6 +48,9 @@ html{
             display: inline-block;
             // position: relative;
             // bottom: 20px;
+
+            // Check!!
+            // 位置の調節はコンポーネントを使う箇所でそれぞれ設定してあげてください！
             margin-left: 30px;
             margin-bottom: 17px;
         }
@@ -57,7 +66,13 @@ html{
         font-size: 9em;
         color: #171717;
         opacity: 5%;
+
+        // Check!!
+        // float使うときは、clearfixを忘れずに！
         float: right;
+
+        // Check!!
+        // 位置の調節はコンポーネントを使う箇所でそれぞれ設定してあげてください！
         margin-top: 70px;
         margin-bottom: 70px;
         // position: relative;
@@ -77,9 +92,9 @@ html{
         // Check!!
         // absolute では、横幅が担保できないので、設定しましょう!
         position: absolute;
-        // left: 0;
-        // right: 0;
-        width: 100%;
+        left: 0;
+        right: 0;
+        // width: 100%;
 
         z-index: 99;
         &_inner {
@@ -91,16 +106,7 @@ html{
             justify-content: space-between;
         }
 
-        // Check!!
-        // aタグの影響範囲が広すぎます！
-        a {
-            font-size: 1.8em;
-            text-decoration: none;
-            padding-right: 30px;
-            font-family: 'Noto Serif', serif;
-            color: #ffffff;
-            font-style: italic;
-        }
+
         &_logo {
             display: flex;
             float: left;
@@ -118,8 +124,23 @@ html{
 
             // Check!!
             // いらない
-            padding-left: 250px;
+            // padding-left: 250px;
             // padding-left: 500px;
+            // Check!!
+            // aタグの影響範囲が広すぎます！
+            // aタグの影響範囲はナビの中だけに留めましょう！
+            a {
+                font-size: 1.8em;
+                text-decoration: none;
+                padding-right: 30px;
+
+                // Check!!
+                // フォントの指定はboduタグにしているので不要です！
+                font-family: 'Noto Serif', serif;
+
+                color: #ffffff;
+                font-style: italic;
+            }
         }
     }
 
@@ -129,9 +150,9 @@ html{
         position: relative;
 
         .slider{
-        position: relative;
-        width: 100%;
-        height: 100%;
+            position: relative;
+            width: 100%;
+            height: 100%;
 
             .slide {
                 background-repeat: no-repeat;
@@ -196,7 +217,10 @@ html{
             display: flex;
 
             // Check!!
+            // flexの使い方を今一度学習しましょう！
+            justify-content: space-between;
             align-items: center;
+
 
             // Check!!
             // imgの初期設定は全体に及ぶように記述しましょう！
@@ -210,9 +234,10 @@ html{
         }
 
         // Check!!
+        // デザインカンプから割合を導き出してください！
+        // 例）440 / 1000 = 0.44 = 44%
         &_sentence{
-            width: 56%;
-            padding-right: 12%;
+            width: 44%;
         }
         &_img{
             width: 44%;
@@ -221,9 +246,13 @@ html{
 
     .works {
         // Check!!
-        // この記述は？
+        // この記述はいらないです！
         clear: none;
 
+
+        // Check!!
+        // marginを使うと、要素の外側に間隔を作ってしまいます！
+        // paddginを使いましょう！
         margin-top: 70px;
 
         // Check!!
@@ -240,12 +269,10 @@ html{
             height: auto;
             // height: 100vh;
             // position: relative;
+        }
 
-            .inner:after{
-                content: '';
-                display: block;
-                clear: both;
-            }
+        .subtitle{
+            margin: 0;
         }
 
         // Check!!
@@ -286,7 +313,7 @@ html{
 
                 // Check!!
                 // Heightの指定は不要です！
-                height: 134px;
+                // height: 134px;
                 font-size: 1.6em;
                 color: black;
                 line-height: 1.8;
@@ -337,22 +364,34 @@ html{
             text-align: center;
             font-size: 4em;
             position: absolute;
+
+            // Check!!
+            // 中央に寄せる記述が違います！
             bottom: 230px;
             padding-left: 120px;
             color: #FFF;
 
         }
+
+        // Check!!
+        // aタグの初期設定は影響範囲が全体に及ぶように書きましょう！
         a {
             text-decoration: none;
         }
     }
     .contact {
         clear: none;
+
+        // Check!!
+        // 内側に間隔を作る場合は、marginではなくpaddingです！
         margin-top: 200px;
 
         &_txt {
             color: #ffffff;
             text-align: center;
+
+            // Check!!
+            // 中央に寄せる目的なら271pxはいらないです！
             padding: 594px 271px 40px 271px;
             font-size: 2.0em;
             // position: absolute;
