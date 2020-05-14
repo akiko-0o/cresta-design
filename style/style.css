@@ -359,17 +359,31 @@ html .body .service_images {
       justify-content: space-around;
 }
 
-html .body .service_txt {
-  text-align: center;
-  font-size: 4em;
+html .body .service .se-box {
+  position: relative;
+}
+
+html .body .service .se-box p {
   position: absolute;
   top: 50%;
   left: 50%;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+}
+
+html .body .service_txt {
+  text-align: center;
+  font-size: 4em;
   color: #FFF;
 }
 
 html .body .service .subtitle {
   padding-bottom: 70px;
+}
+
+html .body .service li:hover {
+  opacity: 0.7;
 }
 
 html .body .contact .title {
