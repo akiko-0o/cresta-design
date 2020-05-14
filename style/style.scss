@@ -100,20 +100,61 @@ html{
         &_nav {
             display: flex;
             float: right;
-            clear: both;
             padding-top: 10px;
-            padding-left: 250px;
+
+            -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+            -webkit-transition: all 0.35s ease;
+            transition: all 0.35s ease;
+
+
+              li {
+                display: inline-block;
+                list-style: outside none none;
+                // margin: 0 2em;
+                padding: 0;
+              }
+
+
+
             a {
                 font-size: 1.8em;
                 padding-right: 30px;
                 font-family: 'Noto Serif', serif;
                 color: #ffffff;
                 font-style: italic;
-            }
+                display: inline-block;
+                position: relative;
+
+                &:before {
+                    left: 20%;
+                    right: 20%;
+                    top: 50%;
+                    content: '';
+                    border-right: 8px solid #fff;
+                    -webkit-transform: translateY(-50%);
+                    transform: translateY(-50%);
+                    height: 3px;
+                    opacity: 0;
+                    position: absolute;
+                    -webkit-transition: all 0.35s ease;
+                    transition: all 0.35s ease;
+                  }
+
+                  &:hover {
+                    color: #ffffff;
+                  }
+                  &:hover:before {
+                    left: 10%;
+                    right: 10%;
+                    opacity: 1;
+                  }
+            } 
         }
     }
 
     .mv{
+        clear: both;
         height: 100vh;
         width: 100%;
         position: relative;
@@ -150,9 +191,9 @@ html{
 
     .concept {
 
-    .title {
-        padding-top: 118px;
-    }
+        .title {
+            padding-top: 118px;
+        }
         &_txt{
             margin: 70px;
             text-align: center;
@@ -169,8 +210,6 @@ html{
         }
 
         &_sentence {
-            // width: 370px;
-            // height: 146px;
             width: 44%;
             font-size: 1.6em;
             line-height: 1.9;
@@ -179,8 +218,6 @@ html{
         &_img {
             width: 44%;
             height: auto;
-                // position: relative;
-                // margin-left: 120px;
             vertical-align: bottom;
             }
         .subtitle {
@@ -243,11 +280,7 @@ html{
             padding-top: 118px;
         }
 
-        img{
-            max-width: 100%;
-            height: auto;
-            vertical-align: bottom;
-        }
+ 
         
         &_images {
             display: flex;
@@ -255,7 +288,6 @@ html{
             padding-top: 80px;
             padding-bottom: 120px;
             position: relative;
-            top: 65px;
             max-width: 100%;
             height: auto;
             vertical-align: bottom;
@@ -266,8 +298,8 @@ html{
             text-align: center;
             font-size: 4em;
             position: absolute;
-            bottom: 230px;
-            padding-left: 120px;
+            top: 50%;
+            left: 50%;
             color: #FFF;
         }
         .subtitle {
@@ -310,6 +342,13 @@ html{
         background-color: #F7D43F;
         transition: .4s;
         font-size: 1.6em;
+        overflow: hidden;
+
+          &:hover {
+            color: #fff;
+            background-color: #DDDDDD;
+          }
+          
     }
     .footer {
         text-align: center;

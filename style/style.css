@@ -159,9 +159,17 @@ html .body .header_nav {
   display: -ms-flexbox;
   display: flex;
   float: right;
-  clear: both;
   padding-top: 10px;
-  padding-left: 250px;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+html .body .header_nav li {
+  display: inline-block;
+  list-style: outside none none;
+  padding: 0;
 }
 
 html .body .header_nav a {
@@ -170,9 +178,37 @@ html .body .header_nav a {
   font-family: 'Noto Serif', serif;
   color: #ffffff;
   font-style: italic;
+  display: inline-block;
+  position: relative;
+}
+
+html .body .header_nav a:before {
+  left: 20%;
+  right: 20%;
+  top: 50%;
+  content: '';
+  border-right: 8px solid #fff;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  height: 3px;
+  opacity: 0;
+  position: absolute;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+
+html .body .header_nav a:hover {
+  color: #ffffff;
+}
+
+html .body .header_nav a:hover:before {
+  left: 10%;
+  right: 10%;
+  opacity: 1;
 }
 
 html .body .mv {
+  clear: both;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -305,12 +341,6 @@ html .body .service .title {
   padding-top: 118px;
 }
 
-html .body .service img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
-}
-
 html .body .service_images {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -322,7 +352,6 @@ html .body .service_images {
   padding-top: 80px;
   padding-bottom: 120px;
   position: relative;
-  top: 65px;
   max-width: 100%;
   height: auto;
   vertical-align: bottom;
@@ -334,8 +363,8 @@ html .body .service_txt {
   text-align: center;
   font-size: 4em;
   position: absolute;
-  bottom: 230px;
-  padding-left: 120px;
+  top: 50%;
+  left: 50%;
   color: #FFF;
 }
 
@@ -380,6 +409,12 @@ html .body .botton {
   -webkit-transition: .4s;
   transition: .4s;
   font-size: 1.6em;
+  overflow: hidden;
+}
+
+html .body .botton:hover {
+  color: #fff;
+  background-color: #DDDDDD;
 }
 
 html .body .footer {
