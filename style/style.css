@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -56,6 +57,12 @@ html {
   font-size: 62.5%;
 }
 
+@media screen and (max-width: 767px) {
+  html {
+    padding: 0;
+  }
+}
+
 html .body {
   font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 }
@@ -64,6 +71,12 @@ html .body .inner {
   max-width: 1000px;
   width: 100%;
   margin: 0 auto;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .inner {
+    padding: 0 20px;
+  }
 }
 
 html .body .inner-large {
@@ -90,6 +103,12 @@ html .body .title {
   text-align: left;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .title {
+    font-size: 3em;
+  }
+}
+
 html .body .title:after {
   content: '';
   width: 200px;
@@ -98,6 +117,13 @@ html .body .title:after {
   display: inline-block;
   margin-left: 30px;
   margin-bottom: 17px;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .title:after {
+    width: 30%;
+    height: 2px;
+  }
 }
 
 html .body .title.white {
@@ -115,6 +141,12 @@ html .body .subtitle {
   opacity: 5%;
   text-align: right;
   z-index: 99;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .subtitle {
+    font-size: 4em;
+  }
 }
 
 html .body .subtitle::after {
@@ -166,6 +198,11 @@ html .body .header_nav {
   transition: all 0.35s ease;
 }
 
+html .body .header_nav .header_nav.active {
+  -webkit-transform: translateY(0%);
+          transform: translateY(0%);
+}
+
 html .body .header_nav li {
   display: inline-block;
   list-style: outside none none;
@@ -207,6 +244,43 @@ html .body .header_nav a:hover:before {
   opacity: 1;
 }
 
+html .body .header .Toggle {
+  display: block;
+  position: fixed;
+  /* bodyに対しての絶対位置指定 */
+  right: 13px;
+  top: 12px;
+  width: 42px;
+  height: 42px;
+  cursor: pointer;
+  z-index: 3;
+}
+
+html .body .header .Toggle span {
+  display: block;
+  position: absolute;
+  width: 30px;
+  border-bottom: solid 3px #000;
+  -webkit-transition: .35s ease-in-out;
+  /*変化の速度を指定*/
+  /*変化の速度を指定*/
+  transition: .35s ease-in-out;
+  /*変化の速度を指定*/
+  left: 6px;
+}
+
+html .body .header .Toggle span:nth-child(1) {
+  top: 9px;
+}
+
+html .body .header .Toggle span:nth-child(2) {
+  top: 18px;
+}
+
+html .body .header .Toggle span:nth-child(3) {
+  top: 27px;
+}
+
 html .body .mv {
   clear: both;
   height: 100vh;
@@ -234,6 +308,12 @@ html .body .mv .slider_logo {
   color: #ffffff;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .mv .slider_logo {
+    font-size: 0.5em;
+  }
+}
+
 html .body .mv .slider_logo h2:nth-child(1) {
   font-size: 7em;
   letter-spacing: 4px;
@@ -255,6 +335,12 @@ html .body .concept_txt {
   font-size: 3em;
   letter-spacing: 3px;
   line-height: 1.8;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .concept_txt {
+    font-size: 1.7em;
+  }
 }
 
 html .body .concept_box {
@@ -378,6 +464,12 @@ html .body .service_txt {
   color: #FFF;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .service_txt {
+    font-size: 2em;
+  }
+}
+
 html .body .service .subtitle {
   padding-bottom: 70px;
 }
@@ -396,6 +488,12 @@ html .body .contact_txt {
   text-align: center;
   padding: 0px 271px 40px 271px;
   font-size: 2.0em;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .contact_txt {
+    font-size: 1.8em;
+  }
 }
 
 html .body .contact .img {
