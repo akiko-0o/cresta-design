@@ -5,10 +5,10 @@ html{
     @media screen and (max-width: 767px) {
         padding: 0;
     }
-  
+
 .body{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
-    
+
     // レイアウト
     .inner {
         max-width: 1000px;
@@ -23,7 +23,6 @@ html{
         max-width: 1200px;
         width: 100%;
         margin: 0 auto;
-        
     }
 
     img{
@@ -94,13 +93,21 @@ html{
         }
     }
 
+    // Check !!
+    // spのコーディングの時は部分的に、display: none;のにしてやると便利です！
+    // .wrap{
+    //     @media screen and (max-width: 767px) {
+    //         display: none;
+    //     }
+    // }
+
     // スタイル
-    
     .header {
         position: absolute;
         left: 0;
         right: 0;
         z-index: 99;
+
         &_inner {
             padding: 19px 120px 0  120px;
             display: flex;
@@ -138,38 +145,68 @@ html{
 
             a {
                 font-size: 1.8em;
-                padding-right: 30px;
+
+                // Check !!
+                // aタグにpaddingを加えると、クリックの範囲にpaddingを含んでしまいます。
+                // この場合は、marginの方が適切です
+                // padding-right: 30px;
+                margin-right: 30px;
+
                 font-family: 'Noto Serif', serif;
                 color: #ffffff;
                 font-style: italic;
                 display: inline-block;
                 position: relative;
 
-                &:before {
-                    left: 20%;
-                    right: 20%;
-                    top: 50%;
+                // Check !!
+                // beforeとafterの共通部分を一気に書くと楽です
+                &:before, &:after{
                     content: '';
-                    border-right: 8px solid #fff;
-                    -webkit-transform: translateY(-50%);
-                    transform: translateY(-50%);
                     height: 3px;
-                    opacity: 0;
+                    border-right: 8px solid #fff;
                     position: absolute;
-                    -webkit-transition: all 0.35s ease;
-                    transition: all 0.35s ease;
-                  }
+                    left: 0;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    opacity: 0;
 
-                  &:hover {
+                    // Check !!
+                    // これは省略系です
+                    transition: all .35s ease;
+                    // Check !!
+                    // transition-property: all;
+                    // transition-duration: 0.35s;
+                    // transition-timing-function: ease;
+                }
+
+                &:before {
+                    left: 0;
+                }
+
+                &:after{
+                    right: 0;
+                }
+
+                &:hover {
                     color: #ffffff;
-                  }
-                  &:hover:before {
-                    left: 10%;
-                    right: 10%;
-                    opacity: 1;
-                  }
-            } 
+                }
+
+                // Check !!
+                // hoverの動きを確認しておきましょう！
+                &:hover {
+                    &:before {
+                        opacity: 1;
+                        left: -17px;
+                    }
+
+                    &:after{
+                        opacity: 1;
+                        right: -17px
+                    }
+                }
+            }
         }
+
         .Toggle {
             display: block;
             position: fixed;    /* bodyに対しての絶対位置指定 */
@@ -179,45 +216,53 @@ html{
             height: 42px;
             cursor: pointer;
             z-index: 3;
-        }
-        .Toggle span {
-            display: block;
-            position: absolute;
-            width: 30px;
-            border-bottom: solid 3px #000;
-            -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
-            -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
-            transition: .35s ease-in-out;			/*変化の速度を指定*/
-            left: 6px;
-        }
-         
-        .Toggle span:nth-child(1) {
-            top: 9px;
-        }
-         
-        .Toggle span:nth-child(2) {
-            top: 18px;
-        }
-         
-        .Toggle span:nth-child(3) {
-            top: 27px;
-        }
 
-        // .Toggle.active span:nth-child(1) {
-        //     top: 18px;
-        //     left: 6px;
-        //     -webkit-transform: rotate(-45deg);
-        //     -moz-transform: rotate(-45deg);
-        //     transform: rotate(-45deg);
-        // }
+            // Check !!
+            // pc時要らないので、display: none;で非表示に
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
 
-        // .Toggle.active span:nth-child(2),
-        // .Toggle.active span:nth-child(3) {
-        //     top: 18px;
-        //     -webkit-transform: rotate(45deg);
-        //     -moz-transform: rotate(45deg);
-        //     transform: rotate(45deg);
-        // }
+            // Check !!
+            // 折角なので、scss記法で書きましょう！
+            span {
+                display: block;
+                position: absolute;
+                width: 30px;
+                border-bottom: solid 3px #000;
+                transition: .35s ease-in-out;			/*変化の速度を指定*/
+                left: 6px;
+
+                &:nth-child(1) {
+                    top: 9px;
+                }
+
+                &:nth-child(2) {
+                    top: 18px;
+                }
+
+                &:nth-child(3) {
+                    top: 27px;
+                }
+            }
+
+            &.active span {
+                &:nth-child(1) {
+                    top: 18px;
+                    left: 6px;
+                    transform: rotate(-45deg);
+                }
+                // Check !!
+                // 消してあげた方がわかりやすいです
+                &:nth-child(2){
+                    opacity: 0;
+                }
+                &:nth-child(3) {
+                    top: 18px;
+                    transform: rotate(45deg);
+                }
+            }
+        }
     }
 
     .mv{
@@ -227,9 +272,9 @@ html{
         position: relative;
 
         .slider{
-        position: relative;
-        width: 100%;
-        height: 100%;
+            position: relative;
+            width: 100%;
+            height: 100%;
 
             .slide {
                 background-repeat: no-repeat;
@@ -247,14 +292,18 @@ html{
             @media screen and (max-width: 767px) {
                 font-size: 0.5em;
             }
-            h2:nth-child(1) {
-                font-size: 7em;
-                letter-spacing: 4px;
-            }
-            h2:nth-child(2) {
-                font-size: 4em;
-                text-align: center;
-                padding-top: 35px;
+
+            span {
+                display: block;
+                &:nth-child(1) {
+                    font-size: 7em;
+                    letter-spacing: 4px;
+                }
+                &:nth-child(2) {
+                    font-size: 4em;
+                    text-align: center;
+                    padding-top: 35px;
+                }
             }
         }
     }
@@ -287,7 +336,7 @@ html{
             font-size: 1.6em;
             line-height: 1.9;
         }
-            
+
         &_img {
             width: 44%;
             height: auto;
@@ -297,7 +346,7 @@ html{
             padding-top: 97px;
         }
 
-        
+
     }
 
     .works {
@@ -327,13 +376,16 @@ html{
             justify-content: space-around;
             p {
                 background-color: #FFF;
+
+                // Check !!
+                // heightは不要です！
                 height: 134px;
                 font-size: 1.6em;
                 color: black;
                 line-height: 1.8;
                 padding: 25px 20px;
             }
-            
+
             > li {
                 width: calc((100% - 40px) / 3);
             }
@@ -345,7 +397,7 @@ html{
         .subtitle {
             padding-bottom: 70px;
         }
-        
+
     }
 
     .service {
@@ -353,8 +405,8 @@ html{
             padding-top: 118px;
         }
 
- 
-        
+
+
         &_images {
             display: flex;
             flex-direction: row;
@@ -365,8 +417,39 @@ html{
             height: auto;
             vertical-align: bottom;
             justify-content: space-around;
+
+            > li {
+                position: relative;
+
+                // Check !!
+                // hoverの動きに注目してください！
+                &:before, &:after{
+                    content: '';
+                    height: 0;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    background-color: rgba(#282F35, .7);
+                    transition: .3s;
+                    z-index: 1;
+                }
+
+                &:before{
+                    top: 0;
+                }
+
+                &:after{
+                    bottom: 0;
+                }
+
+                &:hover {
+                    &:before, &:after{
+                        height: 50%;
+                    }
+                }
+            }
         }
-   
+
         .se-box {
             position: relative;
             p {
@@ -376,9 +459,13 @@ html{
                 transform: translate(-50%, -50%);
                 -webkit-transform: translate(-50%, -50%);
                 -ms-transform: translate(-50%, -50%);
+
+                // Check !!
+                // 擬似要素の上に持ってくる為に
+                z-index: 2;
             }
         }
-        
+
         &_txt {
             text-align: center;
             font-size: 4em;
@@ -390,11 +477,6 @@ html{
         .subtitle {
             padding-bottom: 70px;
         }
-
-        li:hover {
-            opacity: 0.7;
-        }
-
     }
 
     .contact {
@@ -416,6 +498,12 @@ html{
             max-width: 100%;
             height: auto;
             vertical-align: bottom;
+
+            // Check !!
+            // 下のプロパティを追加してください！
+            // background-repeat: no-repeat;
+            // background-size: cover;
+            // background-position: center;
         }
         &_btn {
             text-align: center;
@@ -436,12 +524,36 @@ html{
         transition: .4s;
         font-size: 1.6em;
         overflow: hidden;
+        position: relative;
 
-          &:hover {
-            color: #fff;
+        // Check !!
+        // hoverの動きに注目してください！
+        &:after{
+            content: '';
+            width: 250px;
+            height: 100px;
             background-color: #DDDDDD;
-          }
-          
+            position: absolute;
+            // left: 50%;
+            left: -100%;
+            top: 50%;
+            transform :translateY(-50%) translateX(-50%);
+            transition: 1s ease;
+        }
+
+        span {
+            position: relative;
+            z-index: 2;
+        }
+
+        &:hover {
+            // color: #fff;
+            // background-color: #DDDDDD;
+            &:after{
+                left: 200%;
+            }
+        }
+
     }
     .footer {
         text-align: center;

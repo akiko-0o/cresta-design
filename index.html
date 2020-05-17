@@ -13,7 +13,7 @@
 
 
 <body class="body">
-    <header class="header">   
+    <header class="header">
         <div class="header_inner">
             <h1 class="header_logo">
                 <a href="#">
@@ -28,12 +28,15 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
+
+            <!-- Check!! -->
+            <!-- 命名規約を揃えましょう！ -->
             <div class="Toggle">
-                　　<span></span>
-                　　<span></span>
-                　　<span></span>
+            　　<span></span>
+            　　<span></span>
+            　　<span></span>
             </div>
-        </div> 
+        </div>
     </header>
 
     <div class="mv">
@@ -43,10 +46,12 @@
             <div class="slide" style="background-image: url(./img/index/fv-bgi_03@2x.jpg);"></div>
         </div>
 
-        <div class="slider_logo">
-            <h2>Design for Smile.<br></h2>
-            <h2>快適なオフィスをデザインする</h2>
-        </div>
+        <!-- Check!! -->
+        <!-- div > h2ではなく、h2 > span が適切です -->
+        <h2 class="slider_logo">
+            <span>Design for Smile.<br></span>
+            <span>快適なオフィスをデザインする</span>
+        </h2>
     </div>
 
         <div class="wrap">
@@ -68,8 +73,10 @@
                 <div class="inner-large">
                     <h3 class="subtitle">Our Concept</h3>
                 </div>
-                </section>
+            </section>
 
+            <!-- Check!! -->
+            <!-- sectionにbackground-imageのプロパティを含めてください。 -->
             <section class="works">
                 <div class="works_backimg" style="background-image: url(./img/index/works-bgi@2x.jpg);">
                     <div class="inner-large">
@@ -90,11 +97,11 @@
                             <li>
                                 <a href="">
                                     <img src="./img/index/card-img03@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                                </a>  
+                                </a>
                             </li>
                         </ul>
                         <div class="works_btn">
-                            <a href="#" class="botton">View more</a>
+                            <a href="#" class="botton"><span>View more</span></a>
                         </div>
                     </div>
                     <div class="inner-large">
@@ -102,7 +109,7 @@
                     </div>
                 </div>
             </section>
-        
+
 
         <section class="service">
             <div class="inner">
@@ -131,18 +138,22 @@
                                 <img src="./img/index/sevice-img03@2x.jpg" alt="">
                                 <p class="service_txt">Direction</p>
                             </div>
-                        </a>  
+                        </a>
                     </li>
                 </ul>
+            <!-- Check!! -->
+            <!-- <div class="inner-large">で囲んでください！ -->
             <h3 class="subtitle">Our Service</h3>
         </section>
 
+        <!-- Check!! -->
+        <!-- sectionにbackground-imageのプロパティを含めてください。 -->
         <section class="contact">
             <div class="img" style="background-image: url(./img/index/contact-bgi@2x.jpg);">
                 <div class="inner-large">
                     <h3 class="title white">Contact</h3>
-                </div>  
-                
+                </div>
+
                 <div class="inner">
                     <div class="contact_txt">お気軽にご相談ください。</div>
                     <div class="contact_btn">
@@ -160,36 +171,35 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    
+
     <script>
-    $(function () {
-        $('.slider').slick({
-            infinite: true,
-            autoplay: true,
-            arrows: false,
-            dots: false,
-            autoplaySpeed: 2000,
-            fade: true,
-            draggable : true,
+        // Check !!
+        // $(function () { は基本的に一つにまとめて書いてください！
+        $(function () {
+            $('.slider').slick({
+                infinite: true,
+                autoplay: true,
+                arrows: false,
+                dots: false,
+                autoplaySpeed: 2000,
+                fade: true,
+                draggable : true,
+            })
         })
-    })
 
- 
-    $(function() {
-    　$('.Toggle').click(function() {
-    　　$(this).toggleClass('active');
+        $(function() {
 
-    　if ($(this).hasClass('active')) {
-    　　$('.header_nav').addClass('active');
-    　} else {
-    　　$('.header_nav').removeClass('active');
-    　}
-    　});
-    });
-</script>
+            $('.Toggle').click(function() {
+                $(this).toggleClass('active');
 
+                if ($(this).hasClass('active')) {
+                    $('.header_nav').addClass('active');
+                } else {
+                    $('.header_nav').removeClass('active');
+                }
+            });
+        });
     </script>
 
 </body>
 </html>
- 

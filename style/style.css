@@ -211,7 +211,7 @@ html .body .header_nav li {
 
 html .body .header_nav a {
   font-size: 1.8em;
-  padding-right: 30px;
+  margin-right: 30px;
   font-family: 'Noto Serif', serif;
   color: #ffffff;
   font-style: italic;
@@ -219,19 +219,26 @@ html .body .header_nav a {
   position: relative;
 }
 
-html .body .header_nav a:before {
-  left: 20%;
-  right: 20%;
-  top: 50%;
+html .body .header_nav a:before, html .body .header_nav a:after {
   content: '';
-  border-right: 8px solid #fff;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
   height: 3px;
-  opacity: 0;
+  border-right: 8px solid #fff;
   position: absolute;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  opacity: 0;
+  -webkit-transition: all .35s ease;
+  transition: all .35s ease;
+}
+
+html .body .header_nav a:before {
+  left: 0;
+}
+
+html .body .header_nav a:after {
+  right: 0;
 }
 
 html .body .header_nav a:hover {
@@ -239,9 +246,13 @@ html .body .header_nav a:hover {
 }
 
 html .body .header_nav a:hover:before {
-  left: 10%;
-  right: 10%;
   opacity: 1;
+  left: -17px;
+}
+
+html .body .header_nav a:hover:after {
+  opacity: 1;
+  right: -17px;
 }
 
 html .body .header .Toggle {
@@ -256,14 +267,18 @@ html .body .header .Toggle {
   z-index: 3;
 }
 
+@media screen and (min-width: 768px) {
+  html .body .header .Toggle {
+    display: none;
+  }
+}
+
 html .body .header .Toggle span {
   display: block;
   position: absolute;
   width: 30px;
   border-bottom: solid 3px #000;
   -webkit-transition: .35s ease-in-out;
-  /*変化の速度を指定*/
-  /*変化の速度を指定*/
   transition: .35s ease-in-out;
   /*変化の速度を指定*/
   left: 6px;
@@ -279,6 +294,23 @@ html .body .header .Toggle span:nth-child(2) {
 
 html .body .header .Toggle span:nth-child(3) {
   top: 27px;
+}
+
+html .body .header .Toggle.active span:nth-child(1) {
+  top: 18px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+
+html .body .header .Toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+html .body .header .Toggle.active span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 html .body .mv {
@@ -314,12 +346,16 @@ html .body .mv .slider_logo {
   }
 }
 
-html .body .mv .slider_logo h2:nth-child(1) {
+html .body .mv .slider_logo span {
+  display: block;
+}
+
+html .body .mv .slider_logo span:nth-child(1) {
   font-size: 7em;
   letter-spacing: 4px;
 }
 
-html .body .mv .slider_logo h2:nth-child(2) {
+html .body .mv .slider_logo span:nth-child(2) {
   font-size: 4em;
   text-align: center;
   padding-top: 35px;
@@ -445,6 +481,34 @@ html .body .service_images {
       justify-content: space-around;
 }
 
+html .body .service_images > li {
+  position: relative;
+}
+
+html .body .service_images > li:before, html .body .service_images > li:after {
+  content: '';
+  height: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: rgba(40, 47, 53, 0.7);
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 1;
+}
+
+html .body .service_images > li:before {
+  top: 0;
+}
+
+html .body .service_images > li:after {
+  bottom: 0;
+}
+
+html .body .service_images > li:hover:before, html .body .service_images > li:hover:after {
+  height: 50%;
+}
+
 html .body .service .se-box {
   position: relative;
 }
@@ -456,6 +520,7 @@ html .body .service .se-box p {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 html .body .service_txt {
@@ -472,10 +537,6 @@ html .body .service_txt {
 
 html .body .service .subtitle {
   padding-bottom: 70px;
-}
-
-html .body .service li:hover {
-  opacity: 0.7;
 }
 
 html .body .contact .title {
@@ -522,11 +583,30 @@ html .body .botton {
   transition: .4s;
   font-size: 1.6em;
   overflow: hidden;
+  position: relative;
 }
 
-html .body .botton:hover {
-  color: #fff;
+html .body .botton:after {
+  content: '';
+  width: 250px;
+  height: 100px;
   background-color: #DDDDDD;
+  position: absolute;
+  left: -100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%) translateX(-50%);
+          transform: translateY(-50%) translateX(-50%);
+  -webkit-transition: 1s ease;
+  transition: 1s ease;
+}
+
+html .body .botton span {
+  position: relative;
+  z-index: 2;
+}
+
+html .body .botton:hover:after {
+  left: 200%;
 }
 
 html .body .footer {
