@@ -59,6 +59,8 @@ html {
 
 @media screen and (max-width: 767px) {
   html {
+    width: 100%;
+    height: auto;
     padding: 0;
   }
 }
@@ -212,7 +214,6 @@ html .body .header_nav li {
 html .body .header_nav a {
   font-size: 1.8em;
   padding-right: 30px;
-  font-family: 'Noto Serif', serif;
   color: #ffffff;
   font-style: italic;
   display: inline-block;
@@ -279,6 +280,20 @@ html .body .header .Toggle span:nth-child(2) {
 
 html .body .header .Toggle span:nth-child(3) {
   top: 27px;
+}
+
+html .body .header .Toggle.active span:nth-child(1) {
+  top: 18px;
+  left: 6px;
+  -webkit-transform: rotate(-45deg);
+  transform: rotate(-45deg);
+}
+
+html .body .header .Toggle.active span:nth-child(2),
+html .body .header .Toggle.active span:nth-child(3) {
+  top: 18px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 html .body .mv {
@@ -394,7 +409,6 @@ html .body .works_images {
       -ms-flex-direction: row;
           flex-direction: row;
   max-width: 1000px;
-  height: auto;
   margin-bottom: 80px;
   margin-top: 80px;
   -ms-flex-pack: distribute;
@@ -478,6 +492,12 @@ html .body .service li:hover {
   opacity: 0.7;
 }
 
+html .body .contact {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
 html .body .contact .title {
   padding-top: 127px;
   padding-bottom: 84px;
@@ -494,12 +514,6 @@ html .body .contact_txt {
   html .body .contact_txt {
     font-size: 1.8em;
   }
-}
-
-html .body .contact .img {
-  max-width: 100%;
-  height: auto;
-  vertical-align: bottom;
 }
 
 html .body .contact_btn {

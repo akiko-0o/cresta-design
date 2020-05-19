@@ -3,6 +3,8 @@
 html{
     font-size: 62.5%;
     @media screen and (max-width: 767px) {
+        width: 100%;
+        height: auto;
         padding: 0;
     }
   
@@ -86,7 +88,6 @@ html{
         &::after {
             content: "";
             display: block;
-            clear: both;
         }
         &.left {
             text-align: left;
@@ -131,7 +132,6 @@ html{
               li {
                 display: inline-block;
                 list-style: outside none none;
-                // margin: 0 2em;
                 padding: 0;
               }
 
@@ -139,7 +139,6 @@ html{
             a {
                 font-size: 1.8em;
                 padding-right: 30px;
-                font-family: 'Noto Serif', serif;
                 color: #ffffff;
                 font-style: italic;
                 display: inline-block;
@@ -203,25 +202,24 @@ html{
             top: 27px;
         }
 
-        // .Toggle.active span:nth-child(1) {
-        //     top: 18px;
-        //     left: 6px;
-        //     -webkit-transform: rotate(-45deg);
-        //     -moz-transform: rotate(-45deg);
-        //     transform: rotate(-45deg);
-        // }
+        .Toggle.active span:nth-child(1) {
+        top: 18px;
+        left: 6px;
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+        }
 
-        // .Toggle.active span:nth-child(2),
-        // .Toggle.active span:nth-child(3) {
-        //     top: 18px;
-        //     -webkit-transform: rotate(45deg);
-        //     -moz-transform: rotate(45deg);
-        //     transform: rotate(45deg);
-        // }
+        .Toggle.active span:nth-child(2),
+        .Toggle.active span:nth-child(3) {
+        top: 18px;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+         }
     }
 
     .mv{
-        clear: both;
         height: 100vh;
         width: 100%;
         position: relative;
@@ -321,7 +319,7 @@ html{
             display: flex;
             flex-direction: row;
             max-width: 1000px;
-            height: auto;
+            // height: auto;
             margin-bottom: 80px;
             margin-top: 80px;
             justify-content: space-around;
@@ -398,6 +396,9 @@ html{
     }
 
     .contact {
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
         .title {
             padding-top: 127px;
             padding-bottom: 84px;
@@ -412,11 +413,7 @@ html{
                 font-size: 1.8em;
             }
         }
-        .img {
-            max-width: 100%;
-            height: auto;
-            vertical-align: bottom;
-        }
+
         &_btn {
             text-align: center;
             padding-bottom: 70px;
