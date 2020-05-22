@@ -154,7 +154,6 @@ html .body .subtitle {
 html .body .subtitle::after {
   content: "";
   display: block;
-  clear: both;
 }
 
 html .body .subtitle.left {
@@ -170,7 +169,10 @@ html .body .header {
 }
 
 html .body .header_inner {
-  padding: 19px 120px 0  120px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 19px;
+  max-width: 1200px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -184,7 +186,6 @@ html .body .header_logo {
   display: -ms-flexbox;
   display: flex;
   float: left;
-  clear: both;
   width: auto;
 }
 
@@ -203,12 +204,6 @@ html .body .header_nav {
 html .body .header_nav .header_nav.active {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
-}
-
-html .body .header_nav li {
-  display: inline-block;
-  list-style: outside none none;
-  padding: 0;
 }
 
 html .body .header_nav a {
@@ -297,7 +292,6 @@ html .body .header .Toggle.active span:nth-child(3) {
 }
 
 html .body .mv {
-  clear: both;
   height: 100vh;
   width: 100%;
   position: relative;
@@ -329,19 +323,23 @@ html .body .mv .slider_logo {
   }
 }
 
-html .body .mv .slider_logo h2:nth-child(1) {
+html .body .mv .slider_logo span:nth-child(1) {
   font-size: 7em;
   letter-spacing: 4px;
 }
 
-html .body .mv .slider_logo h2:nth-child(2) {
+html .body .mv .slider_logo span:nth-child(2) {
   font-size: 4em;
   text-align: center;
-  padding-top: 35px;
 }
 
 html .body .concept .title {
   padding-top: 118px;
+}
+
+html .body .concept .subtitle {
+  padding-top: 70px;
+  padding-bottom: 70px;
 }
 
 html .body .concept_txt {
@@ -379,17 +377,13 @@ html .body .concept_img {
   vertical-align: bottom;
 }
 
-html .body .concept .subtitle {
-  padding-top: 97px;
-}
-
 html .body .works {
   margin-top: 75px;
   position: relative;
 }
 
 html .body .works .title {
-  padding-top: 122px;
+  padding-top: 118px;
 }
 
 html .body .works_backimg {
@@ -417,7 +411,6 @@ html .body .works_images {
 
 html .body .works_images p {
   background-color: #FFF;
-  height: 134px;
   font-size: 1.6em;
   color: black;
   line-height: 1.8;
@@ -430,10 +423,6 @@ html .body .works_images > li {
 
 html .body .works_btn {
   text-align: center;
-  padding-bottom: 70px;
-}
-
-html .body .works .subtitle {
   padding-bottom: 70px;
 }
 
@@ -518,7 +507,6 @@ html .body .contact_txt {
 
 html .body .contact_btn {
   text-align: center;
-  padding-bottom: 70px;
 }
 
 html .body .contact .subtitle {

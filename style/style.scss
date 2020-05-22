@@ -24,8 +24,7 @@ html{
     .inner-large {
         max-width: 1200px;
         width: 100%;
-        margin: 0 auto;
-        
+        margin: 0 auto;  
     }
 
     img{
@@ -37,13 +36,6 @@ html{
     a {
         text-decoration: none;
     }
-
-    // .clearfix::after {
-    //     content: "";
-    //     display: block;
-    //     clear: both;
-    //   }
-    // コンポーネント化
 
     .title {
         font-size: 6em;
@@ -103,7 +95,10 @@ html{
         right: 0;
         z-index: 99;
         &_inner {
-            padding: 19px 120px 0  120px;
+            width: 100%;
+            margin: 0 auto;
+            padding-top: 19px;
+            max-width: 1200px;
             display: flex;
             justify-content: space-between;
         }
@@ -111,7 +106,6 @@ html{
         &_logo {
             display: flex;
             float: left;
-            clear: both;
             width: auto;
         }
 
@@ -119,7 +113,6 @@ html{
             display: flex;
             float: right;
             padding-top: 10px;
-
             -webkit-box-sizing: border-box;
             box-sizing: border-box;
             -webkit-transition: all 0.35s ease;
@@ -129,11 +122,11 @@ html{
                 transform: translateY(0%);
                 }
 
-              li {
-                display: inline-block;
-                list-style: outside none none;
-                padding: 0;
-              }
+            //   li {
+            //     display: inline-block;
+            //     list-style: outside none none;
+            //     padding: 0;
+            //   }
 
 
             a {
@@ -169,6 +162,7 @@ html{
                   }
             } 
         }
+
         .Toggle {
             display: block;
             position: fixed;    /* bodyに対しての絶対位置指定 */
@@ -245,14 +239,13 @@ html{
             @media screen and (max-width: 767px) {
                 font-size: 0.5em;
             }
-            h2:nth-child(1) {
+            span:nth-child(1) {
                 font-size: 7em;
                 letter-spacing: 4px;
             }
-            h2:nth-child(2) {
+            span:nth-child(2) {
                 font-size: 4em;
                 text-align: center;
-                padding-top: 35px;
             }
         }
     }
@@ -262,13 +255,15 @@ html{
         .title {
             padding-top: 118px;
         }
+        .subtitle {
+            padding-top: 70px;
+            padding-bottom: 70px;
+        }
         &_txt{
             margin: 70px;
             text-align: center;
             font-size: 3em;
             letter-spacing: 3px;
-            // width: 630px;
-            // height: 95px;
             line-height: 1.8;
             @media screen and (max-width: 767px) {
                 font-size: 1.7em;
@@ -291,10 +286,6 @@ html{
             height: auto;
             vertical-align: bottom;
             }
-        .subtitle {
-            padding-top: 97px;
-        }
-
         
     }
 
@@ -303,9 +294,8 @@ html{
         position: relative;
 
         .title {
-            padding-top: 122px;
+            padding-top: 118px;
         }
-
 
         &_backimg {
             background-repeat: no-repeat;
@@ -325,7 +315,6 @@ html{
             justify-content: space-around;
             p {
                 background-color: #FFF;
-                height: 134px;
                 font-size: 1.6em;
                 color: black;
                 line-height: 1.8;
@@ -340,10 +329,6 @@ html{
             text-align: center;
             padding-bottom: 70px;
         }
-        .subtitle {
-            padding-bottom: 70px;
-        }
-        
     }
 
     .service {
@@ -351,8 +336,6 @@ html{
             padding-top: 118px;
         }
 
- 
-        
         &_images {
             display: flex;
             flex-direction: row;
@@ -416,7 +399,6 @@ html{
 
         &_btn {
             text-align: center;
-            padding-bottom: 70px;
         }
         .subtitle {
             padding-bottom: 111px;
