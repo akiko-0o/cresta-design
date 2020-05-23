@@ -62,6 +62,7 @@ html {
     width: 100%;
     height: auto;
     padding: 0;
+    margin: 0 auto;
   }
 }
 
@@ -168,6 +169,12 @@ html .body .header {
   z-index: 99;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .header {
+    padding: 30px 0 0;
+  }
+}
+
 html .body .header_inner {
   width: 100%;
   margin: 0 auto;
@@ -179,6 +186,12 @@ html .body .header_inner {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .header_inner {
+    max-width: 345px;
+  }
 }
 
 html .body .header_logo {
@@ -206,9 +219,15 @@ html .body .header_nav .header_nav.active {
           transform: translateY(0%);
 }
 
+@media screen and (max-width: 767px) {
+  html .body .header_nav {
+    display: none;
+  }
+}
+
 html .body .header_nav a {
   font-size: 1.8em;
-  padding-right: 30px;
+  margin-right: 30px;
   color: #ffffff;
   font-style: italic;
   display: inline-block;
@@ -240,11 +259,10 @@ html .body .header_nav a:hover:before {
   opacity: 1;
 }
 
-html .body .header .Toggle {
+html .body .header .toggle {
   display: block;
   position: fixed;
-  /* bodyに対しての絶対位置指定 */
-  right: 13px;
+  right: 40px;
   top: 12px;
   width: 42px;
   height: 42px;
@@ -252,7 +270,14 @@ html .body .header .Toggle {
   z-index: 3;
 }
 
-html .body .header .Toggle span {
+@media screen and (min-width: 768px) {
+  html .body .header .toggle {
+    display: none;
+  }
+}
+
+html .body .header .toggle span {
+  background-color: #FFF;
   display: block;
   position: absolute;
   width: 30px;
@@ -265,35 +290,39 @@ html .body .header .Toggle span {
   left: 6px;
 }
 
-html .body .header .Toggle span:nth-child(1) {
+html .body .header .toggle:nth-child(1) {
   top: 9px;
 }
 
-html .body .header .Toggle span:nth-child(2) {
+html .body .header .toggle:nth-child(2) {
   top: 18px;
 }
 
-html .body .header .Toggle span:nth-child(3) {
+html .body .header .toggle:nth-child(3) {
   top: 27px;
 }
 
-html .body .header .Toggle.active span:nth-child(1) {
+html .body .header .toggle.active span:nth-child(1) {
   top: 18px;
   left: 6px;
   -webkit-transform: rotate(-45deg);
-  transform: rotate(-45deg);
+          transform: rotate(-45deg);
 }
 
-html .body .header .Toggle.active span:nth-child(2),
-html .body .header .Toggle.active span:nth-child(3) {
+html .body .header .toggle.active span:nth-child(2) {
+  opacity: 0;
+}
+
+html .body .header .toggle.active span:nth-child(3) {
   top: 18px;
   -webkit-transform: rotate(45deg);
-  transform: rotate(45deg);
+          transform: rotate(45deg);
 }
 
 html .body .mv {
-  height: 100vh;
+  clear: both;
   width: 100%;
+  height: 100%;
   position: relative;
 }
 
@@ -319,7 +348,7 @@ html .body .mv .slider_logo {
 
 @media screen and (max-width: 767px) {
   html .body .mv .slider_logo {
-    font-size: 0.5em;
+    top: 35%;
   }
 }
 
@@ -328,9 +357,26 @@ html .body .mv .slider_logo span:nth-child(1) {
   letter-spacing: 4px;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .mv .slider_logo span:nth-child(1) {
+    font-size: 3.4em;
+    text-align: center;
+    letter-spacing: 1;
+  }
+}
+
 html .body .mv .slider_logo span:nth-child(2) {
   font-size: 4em;
   text-align: center;
+  padding-top: 35px;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .mv .slider_logo span:nth-child(2) {
+    padding-top: 35px;
+    text-align: center;
+    font-size: 3em;
+  }
 }
 
 html .body .concept .title {
@@ -340,6 +386,12 @@ html .body .concept .title {
 html .body .concept .subtitle {
   padding-top: 70px;
   padding-bottom: 70px;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .concept .subtitle {
+    padding: 0 auto;
+  }
 }
 
 html .body .concept_txt {
@@ -352,7 +404,11 @@ html .body .concept_txt {
 
 @media screen and (max-width: 767px) {
   html .body .concept_txt {
-    font-size: 1.7em;
+    font-size: 1.9em;
+    padding-top: 55px;
+    margin: 0;
+    line-height: 1;
+    letter-spacing: 0;
   }
 }
 
@@ -365,10 +421,24 @@ html .body .concept_box {
           justify-content: space-between;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .concept_box {
+    display: block;
+  }
+}
+
 html .body .concept_sentence {
   width: 44%;
   font-size: 1.6em;
   line-height: 1.9;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .concept_sentence {
+    width: 100%;
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
 }
 
 html .body .concept_img {
@@ -377,13 +447,10 @@ html .body .concept_img {
   vertical-align: bottom;
 }
 
-html .body .works {
-  margin-top: 75px;
-  position: relative;
-}
-
-html .body .works .title {
-  padding-top: 118px;
+@media screen and (max-width: 767px) {
+  html .body .concept_img {
+    width: 100%;
+  }
 }
 
 html .body .works_backimg {
@@ -394,7 +461,15 @@ html .body .works_backimg {
   height: auto;
 }
 
-html .body .works_images {
+html .body .works_backimg .title {
+  padding-top: 118px;
+}
+
+html .body .works_backimg .subtitle {
+  padding-bottom: 70px;
+}
+
+html .body .works_backimg .works_images {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -409,7 +484,13 @@ html .body .works_images {
       justify-content: space-around;
 }
 
-html .body .works_images p {
+@media screen and (max-width: 767px) {
+  html .body .works_backimg .works_images {
+    display: block;
+  }
+}
+
+html .body .works_backimg .works_images p {
   background-color: #FFF;
   font-size: 1.6em;
   color: black;
@@ -417,11 +498,18 @@ html .body .works_images p {
   padding: 25px 20px;
 }
 
-html .body .works_images > li {
+html .body .works_backimg .works_images > li {
   width: calc((100% - 40px) / 3);
 }
 
-html .body .works_btn {
+@media screen and (max-width: 767px) {
+  html .body .works_backimg .works_images > li {
+    width: 90%;
+    padding-bottom: 30px;
+  }
+}
+
+html .body .works_backimg .works_btn {
   text-align: center;
   padding-bottom: 70px;
 }
@@ -448,6 +536,46 @@ html .body .service_images {
       justify-content: space-around;
 }
 
+@media screen and (max-width: 767px) {
+  html .body .service_images {
+    display: block;
+  }
+}
+
+html .body .service_images > li {
+  position: relative;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .service_images > li {
+    padding-bottom: 30px;
+  }
+}
+
+html .body .service_images > li:before, html .body .service_images > li:after {
+  content: '';
+  height: 0;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  background-color: rgba(40, 47, 53, 0.7);
+  -webkit-transition: .3s;
+  transition: .3s;
+  z-index: 1;
+}
+
+html .body .service_images > li:before {
+  top: 0;
+}
+
+html .body .service_images > li:after {
+  bottom: 0;
+}
+
+html .body .service_images > li:hover:before, html .body .service_images > li:hover:after {
+  height: 50%;
+}
+
 html .body .service .se-box {
   position: relative;
 }
@@ -459,6 +587,7 @@ html .body .service .se-box p {
   transform: translate(-50%, -50%);
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
+  z-index: 2;
 }
 
 html .body .service_txt {
@@ -481,18 +610,24 @@ html .body .service li:hover {
   opacity: 0.7;
 }
 
-html .body .contact {
+html .body .img {
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-html .body .contact .title {
+html .body .img .title {
   padding-top: 127px;
   padding-bottom: 84px;
 }
 
-html .body .contact_txt {
+@media screen and (max-width: 767px) {
+  html .body .img .title {
+    padding-top: 90px;
+  }
+}
+
+html .body .img .contact_txt {
   color: #ffffff;
   text-align: center;
   padding: 0px 271px 40px 271px;
@@ -500,17 +635,31 @@ html .body .contact_txt {
 }
 
 @media screen and (max-width: 767px) {
-  html .body .contact_txt {
+  html .body .img .contact_txt {
     font-size: 1.8em;
+    padding: 0;
   }
 }
 
-html .body .contact_btn {
+html .body .img .contact_btn {
   text-align: center;
 }
 
-html .body .contact .subtitle {
+@media screen and (max-width: 767px) {
+  html .body .img .contact_btn {
+    margin-top: 40px;
+  }
+}
+
+html .body .img .subtitle {
+  padding-top: 70px;
   padding-bottom: 111px;
+}
+
+@media screen and (max-width: 767px) {
+  html .body .img .subtitle {
+    padding-bottom: 90px;
+  }
 }
 
 html .body .botton {

@@ -6,6 +6,7 @@ html{
         width: 100%;
         height: auto;
         padding: 0;
+        margin: 0 auto;
     }
   
 .body{
@@ -94,6 +95,9 @@ html{
         left: 0;
         right: 0;
         z-index: 99;
+        @media screen and (max-width: 767px) {
+            padding: 30px 0 0;
+        }
         &_inner {
             width: 100%;
             margin: 0 auto;
@@ -101,12 +105,16 @@ html{
             max-width: 1200px;
             display: flex;
             justify-content: space-between;
+            @media screen and (max-width: 767px) {
+                max-width: 345px;
+            }
         }
 
         &_logo {
             display: flex;
             float: left;
             width: auto;
+
         }
 
         &_nav {
@@ -122,16 +130,14 @@ html{
                 transform: translateY(0%);
                 }
 
-            //   li {
-            //     display: inline-block;
-            //     list-style: outside none none;
-            //     padding: 0;
-            //   }
+            @media screen and (max-width: 767px) {
+                display:none;
+            }
 
 
             a {
                 font-size: 1.8em;
-                padding-right: 30px;
+                margin-right: 30px;
                 color: #ffffff;
                 font-style: italic;
                 display: inline-block;
@@ -163,59 +169,65 @@ html{
             } 
         }
 
-        .Toggle {
+        .toggle {
             display: block;
-            position: fixed;    /* bodyに対しての絶対位置指定 */
-            right: 13px;
+            position: fixed;
+            right: 40px;
             top: 12px;
             width: 42px;
             height: 42px;
             cursor: pointer;
             z-index: 3;
-        }
-        .Toggle span {
-            display: block;
-            position: absolute;
-            width: 30px;
-            border-bottom: solid 3px #000;
-            -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
-            -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
-            transition: .35s ease-in-out;			/*変化の速度を指定*/
-            left: 6px;
-        }
-         
-        .Toggle span:nth-child(1) {
-            top: 9px;
-        }
-         
-        .Toggle span:nth-child(2) {
+            
+            @media screen and (min-width: 768px) {
+                display: none;
+            }
+
+            span {
+                background-color: #FFF;
+                display: block;
+                position: absolute;
+                width: 30px;
+                border-bottom: solid 3px #000;
+                -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
+                -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
+                transition: .35s ease-in-out;			/*変化の速度を指定*/
+                left: 6px;
+            }
+             
+            &:nth-child(1) {
+                top: 9px;
+            }
+             
+            &:nth-child(2) {
+                top: 18px;
+            }
+             
+            &:nth-child(3) {
+                top: 27px;
+            }
+    
+            &.active span:nth-child(1) {
             top: 18px;
-        }
-         
-        .Toggle span:nth-child(3) {
-            top: 27px;
+            left: 6px;
+            transform: rotate(-45deg);
+            }
+    
+            &.active span:nth-child(2){
+                opacity: 0;
+            }
+            &.active span:nth-child(3) {
+            top: 18px;
+            transform: rotate(45deg);
+             }
         }
 
-        .Toggle.active span:nth-child(1) {
-        top: 18px;
-        left: 6px;
-        -webkit-transform: rotate(-45deg);
-        -moz-transform: rotate(-45deg);
-        transform: rotate(-45deg);
-        }
-
-        .Toggle.active span:nth-child(2),
-        .Toggle.active span:nth-child(3) {
-        top: 18px;
-        -webkit-transform: rotate(45deg);
-        -moz-transform: rotate(45deg);
-        transform: rotate(45deg);
-         }
     }
 
     .mv{
-        height: 100vh;
+        clear: both;
         width: 100%;
+        height: 100%;
         position: relative;
 
         .slider{
@@ -237,15 +249,27 @@ html{
             left: 8%;
             color: #ffffff;
             @media screen and (max-width: 767px) {
-                font-size: 0.5em;
+                top: 35%;
             }
             span:nth-child(1) {
                 font-size: 7em;
                 letter-spacing: 4px;
+
+                @media screen and (max-width: 767px) {
+                    font-size: 3.4em;
+                    text-align: center;
+                    letter-spacing: 1;
+                }
             }
             span:nth-child(2) {
                 font-size: 4em;
                 text-align: center;
+                padding-top: 35px;
+                @media screen and (max-width: 767px) {
+                    padding-top: 35px;
+                    text-align: center;
+                    font-size: 3em;
+                }
             }
         }
     }
@@ -258,6 +282,9 @@ html{
         .subtitle {
             padding-top: 70px;
             padding-bottom: 70px;
+            @media screen and (max-width: 767px) {
+                padding: 0 auto;
+            }
         }
         &_txt{
             margin: 70px;
@@ -266,46 +293,72 @@ html{
             letter-spacing: 3px;
             line-height: 1.8;
             @media screen and (max-width: 767px) {
-                font-size: 1.7em;
+                font-size: 1.9em;
+                padding-top: 55px;
+                margin: 0;
+                line-height: 1;
+                letter-spacing: 0;
             }
         }
 
         &_box {
             display: flex;
             justify-content: space-between;
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
         }
 
         &_sentence {
             width: 44%;
             font-size: 1.6em;
             line-height: 1.9;
+            @media screen and (max-width: 767px) {
+                width:100%;
+                padding-top: 30px;
+                padding-bottom: 30px;
+            }
         }
             
         &_img {
             width: 44%;
             height: auto;
             vertical-align: bottom;
+            @media screen and (max-width: 767px) {
+
+                width:100%;
             }
+        }
         
     }
 
-    .works {
-        margin-top: 75px;
-        position: relative;
-
-        .title {
-            padding-top: 118px;
-        }
-
-        &_backimg {
+    // .works {
+    //     margin-top: 75px;
+    //     position: relative;
+        .works_backimg {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
             max-width: 100%;
             height: auto;
+
+        .title {
+            padding-top: 118px;
         }
 
-        &_images{
+        .subtitle {
+            padding-bottom: 70px;
+        }
+
+        // &_backimg {
+        //     background-repeat: no-repeat;
+        //     background-size: cover;
+        //     background-position: center;
+        //     max-width: 100%;
+        //     height: auto;
+        // }
+
+        .works_images{
             display: flex;
             flex-direction: row;
             max-width: 1000px;
@@ -313,6 +366,10 @@ html{
             margin-bottom: 80px;
             margin-top: 80px;
             justify-content: space-around;
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+   
             p {
                 background-color: #FFF;
                 font-size: 1.6em;
@@ -323,9 +380,13 @@ html{
             
             > li {
                 width: calc((100% - 40px) / 3);
+                @media screen and (max-width: 767px) {
+                    width: 90%;
+                    padding-bottom: 30px;
+                }
             }
         }
-        &_btn {
+        .works_btn {
             text-align: center;
             padding-bottom: 70px;
         }
@@ -346,6 +407,41 @@ html{
             height: auto;
             vertical-align: bottom;
             justify-content: space-around;
+            @media screen and (max-width: 767px) {
+                display: block;
+            }
+
+            > li {
+                position: relative;
+                @media screen and (max-width: 767px) {
+                    padding-bottom: 30px;
+                }
+
+                &:before, &:after{
+                    content: '';
+                    height: 0;
+                    width: 100%;
+                    position: absolute;
+                    left: 0;
+                    background-color: rgba(#282F35, .7);
+                    transition: .3s;
+                    z-index: 1;
+                }
+
+                &:before{
+                    top: 0;
+                }
+
+                &:after{
+                    bottom: 0;
+                }
+
+                &:hover {
+                    &:before, &:after{
+                        height: 50%;
+                    }
+                }
+            }
         }
    
         .se-box {
@@ -357,6 +453,7 @@ html{
                 transform: translate(-50%, -50%);
                 -webkit-transform: translate(-50%, -50%);
                 -ms-transform: translate(-50%, -50%);
+                z-index: 2;
             }
         }
         
@@ -378,30 +475,41 @@ html{
 
     }
 
-    .contact {
+    .img {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
         .title {
             padding-top: 127px;
             padding-bottom: 84px;
+            @media screen and (max-width: 767px) {
+                padding-top:90px;
+            }
         }
 
-        &_txt {
+        .contact_txt {
             color: #ffffff;
             text-align: center;
             padding: 0px 271px 40px 271px;
             font-size: 2.0em;
             @media screen and (max-width: 767px) {
                 font-size: 1.8em;
+                padding: 0;
             }
         }
 
-        &_btn {
+        .contact_btn {
             text-align: center;
+            @media screen and (max-width: 767px) {
+                margin-top: 40px
+            }
         }
         .subtitle {
+            padding-top: 70px;
             padding-bottom: 111px;
+            @media screen and (max-width: 767px) {
+                padding-bottom: 90px;
+            }
         }
     }
 
