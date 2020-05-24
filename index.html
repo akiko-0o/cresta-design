@@ -13,7 +13,7 @@
 
 
 <body class="body">
-    <header class="header">   
+    <header class="header">
         <div class="header_inner">
             <h1 class="header_logo">
                 <a href="#">
@@ -22,18 +22,18 @@
             </h1>
             <nav>
                 <ul class="header_nav">
-                    <li><a href="#">Concept</a></li>
+                    <li><a href="#concept">Concept</a></li>
                     <li><a href="#">Service</a></li>
                     <li><a href="#">Works</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <div class="toggle">
+            <div class="toggle sp">
                 　　<span></span>
                 　　<span></span>
                 　　<span></span>
             </div>
-        </div> 
+        </div>
     </header>
 
     <div class="mv">
@@ -45,17 +45,17 @@
 
         <h2 class="slider_logo">
             <span>Design for Smile.<br></span>
-            <span>快適なオフィスをデザインする</span>
+            <!-- Check !! -->
+            <!-- spのみ改行する場合は、brにspクラスを付与する -->
+            <span>快適なオフィスを<br class="sp">デザインする</span>
         </h2>
     </div>
 
         <div class="wrap">
-            <section class="concept">
+            <section class="concept" id="concept">
                 <div class="inner">
                     <h3 class="title">CONCEPT</h3>
-                    <p class="concept_txt">"働きたくなる空間"をデザインすることで<br>
-                            人々を幸せにする。
-                    </p>
+                    <p class="concept_txt">"働きたくなる空間"をデザインする<br class="sp">ことで<br class="pc">人々を幸せにする。</p>
                     <div class="concept_box">
                         <p class="concept_sentence">
                              私たちは、オフィスに特化した空間デザイン専門としております。その理由は、「働きたくなる空間で仕事ができれば多くの人を幸せにできるのではないか」と考えるためです。そんな思いの株式会社Creasta Designだからこそできる空間デザインを提供させていただきます。
@@ -71,6 +71,8 @@
                 </section>
 
             <section class="works_backimg" style="background-image: url(./img/index/works-bgi@2x.jpg);">
+                <!-- Check !! -->
+                <!-- インデントを揃えてください！ -->
                     <div class="inner-large">
                         <h3 class="title white">Works</h3>
                     </div>
@@ -89,7 +91,7 @@
                             <li>
                                 <a href="">
                                     <img src="./img/index/card-img03@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                                </a>  
+                                </a>
                             </li>
                         </ul>
                         <div class="works_btn">
@@ -100,7 +102,7 @@
                         <h3 class="subtitle left">Our Works</h3>
                     </div>
             </section>
-        
+
 
         <section class="service">
             <div class="inner">
@@ -129,20 +131,22 @@
                                 <img src="./img/index/sevice-img03@2x.jpg" alt="">
                                 <p class="service_txt">Direction</p>
                             </div>
-                        </a>  
+                        </a>
                     </li>
                 </ul>
                 <div class="inner-large">
                     <h3 class="subtitle">Our Service</h3>
                 </div>
-  
+
         </section>
 
         <section class="img" style="background-image: url(./img/index/contact-bgi@2x.jpg);">
+                <!-- Check !! -->
+                <!-- インデントを揃えてください！ -->
                 <div class="inner-large">
                     <h3 class="title white">Contact</h3>
-                </div>  
-                
+                </div>
+
                 <div class="inner">
                     <div class="contact_txt">お気軽にご相談ください。</div>
                     <div class="contact_btn">
@@ -159,36 +163,39 @@
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    
+
     <script>
-    $(function () {
-        $('.slider').slick({
-            infinite: true,
-            autoplay: true,
-            arrows: false,
-            dots: false,
-            autoplaySpeed: 2000,
-            fade: true,
-            draggable : true,
+        $(function () {
+            $('.slider').slick({
+                infinite: true,
+                autoplay: true,
+                arrows: false,
+                dots: false,
+                autoplaySpeed: 2000,
+                fade: true,
+                draggable : true,
+            })
         })
-    })
 
- 
-    $(function() {
-    　$('.toggle').click(function() {
-    　　$(this).toggleClass('active');
+        // $(function () {}) は一回でokです
+        $(function() {
+        　$('.toggle').click(function() {
+        　　$(this).toggleClass('active');
+            // $('.header_nav').slideToggle();
 
-    　if ($(this).hasClass('active')) {
-    　　$('.header_nav').addClass('active');
-    　} else {
-    　　$('.header_nav').removeClass('active');
-    　}
-    　});
-    });
-</script>
-
+        　if ($(this).hasClass('active')) {
+            // Check !!
+            // slideToggleを実装してみても面白いかな？
+        　　$('.header_nav').addClass('active');
+        　} else {
+        　　$('.header_nav').removeClass('active');
+        　}
+        　});
+        });
     </script>
+    <!-- Check !! -->
+    <!-- scriptタグが多いです！ -->
+    <!-- </script> -->
 
 </body>
 </html>
- 

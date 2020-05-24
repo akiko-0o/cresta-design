@@ -1,5 +1,11 @@
 @charset 'UTF-8';
 @import './reset';
+* {
+    // Check !!
+    // 必須プロパティです！
+    box-sizing: border-box;
+}
+
 html{
     font-size: 62.5%;
     @media screen and (max-width: 767px) {
@@ -8,24 +14,49 @@ html{
         padding: 0;
         margin: 0 auto;
     }
-  
+
 .body{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
-    
-    // レイアウト
-    .inner {
-        max-width: 1000px;
-        width: 100%;
-        margin: 0 auto;
+
+    // Check !!
+    // pcの時にだけ表示したいときは、このクラスを付与する
+    .pc {
         @media screen and (max-width: 767px) {
-            padding: 0 20px;
+            display: none !important;
         }
     }
 
-    .inner-large {
-        max-width: 1200px;
+    // Check !!
+    // spの時にだけ表示したいときは、このクラスを付与する
+    .sp{
+        @media screen and (min-width: 768px) {
+            display: none !important;
+        }
+    }
+
+    // レイアウト
+    .inner {
+
+        // Check !!
+        // サイドに間隔があった方がページの横幅を
+        // 縮小した際にみやすいです！
+        padding: 0 20px;
+
+        // 左右にpaddingをつけた分、max-widthを広げてください
+        max-width: 1040px;
+        // max-width: 1000px;
+
         width: 100%;
-        margin: 0 auto;  
+        margin: 0 auto;
+    }
+
+    .inner-large {
+
+        // max-width: 1200px;
+        max-width: 1240px;
+        padding: 0 20px;
+        width: 100%;
+        margin: 0 auto;
     }
 
     img{
@@ -89,7 +120,6 @@ html{
     }
 
     // スタイル
-    
     .header {
         position: absolute;
         left: 0;
@@ -102,7 +132,11 @@ html{
             width: 100%;
             margin: 0 auto;
             padding-top: 19px;
+
+            // Check !!
+            // これがあるとメインビジュアルのロゴと縦位置が揃わなくなります！
             max-width: 1200px;
+
             display: flex;
             justify-content: space-between;
             @media screen and (max-width: 767px) {
@@ -114,24 +148,43 @@ html{
             display: flex;
             float: left;
             width: auto;
-
         }
 
         &_nav {
             display: flex;
             float: right;
             padding-top: 10px;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
             -webkit-transition: all 0.35s ease;
             transition: all 0.35s ease;
 
-            .header_nav.active{
-                transform: translateY(0%);
+            @media screen and (max-width: 767px) {
+                // Check !!
+                // activeになった時にtransform: translateY(0%);で出現させるなら、
+                // transform: translateY(-100%);で隠す必要があります！
+                // 画面の上に隠します
+                transform: translateY(-100%);
+
+                // Check !!
+                // これがないとメニューが完成しません！
+                background-color: #282F35;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                // Check !!
+                // トグルメニューを押した時に、元の位置に戻す
+                &.active{
+                    transform: translateY(0%);
                 }
 
-            @media screen and (max-width: 767px) {
-                display:none;
+                > li {
+                    margin-bottom: 30px;
+                }
             }
 
 
@@ -144,7 +197,7 @@ html{
                 position: relative;
 
                 &:before {
-                    left: 20%;
+                    // left: 20%;
                     right: 20%;
                     top: 50%;
                     content: '';
@@ -162,15 +215,18 @@ html{
                     color: #ffffff;
                   }
                   &:hover:before {
-                    left: 10%;
-                    right: 10%;
+                    // left: 10%;
+                    right: -20%;
                     opacity: 1;
                   }
-            } 
+            }
         }
 
         .toggle {
             display: block;
+
+            // Check !!
+            // ヘッダーはロゴも固定してくださいね！
             position: fixed;
             right: 40px;
             top: 12px;
@@ -178,41 +234,47 @@ html{
             height: 42px;
             cursor: pointer;
             z-index: 3;
-            
-            @media screen and (min-width: 768px) {
-                display: none;
-            }
+
+
+            // @media screen and (min-width: 768px) {
+            //     display: none;
+            // }
 
             span {
-                background-color: #FFF;
                 display: block;
                 position: absolute;
                 width: 30px;
-                border-bottom: solid 3px #000;
+
+                // Check !!
+                // 線を白にする場合は、同じプロパティで上書きしてください！
+                // background-color: #FFF;
+                border-bottom: solid 3px #FFF;
+                // border-bottom: solid 3px #000;
+
                 -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
                 -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
                 transition: .35s ease-in-out;			/*変化の速度を指定*/
                 left: 6px;
             }
-             
+
             &:nth-child(1) {
                 top: 9px;
             }
-             
+
             &:nth-child(2) {
                 top: 18px;
             }
-             
+
             &:nth-child(3) {
                 top: 27px;
             }
-    
+
             &.active span:nth-child(1) {
             top: 18px;
             left: 6px;
             transform: rotate(-45deg);
             }
-    
+
             &.active span:nth-child(2){
                 opacity: 0;
             }
@@ -231,9 +293,9 @@ html{
         position: relative;
 
         .slider{
-        position: relative;
-        width: 100%;
-        height: 100%;
+            position: relative;
+            width: 100%;
+            height: 100%;
 
             .slide {
                 background-repeat: no-repeat;
@@ -251,6 +313,7 @@ html{
             @media screen and (max-width: 767px) {
                 top: 35%;
             }
+
             span:nth-child(1) {
                 font-size: 7em;
                 letter-spacing: 4px;
@@ -264,6 +327,9 @@ html{
             span:nth-child(2) {
                 font-size: 4em;
                 text-align: center;
+
+                // Check !!
+                // spanはインライン要素なので、paddingは使用できないです！
                 padding-top: 35px;
                 @media screen and (max-width: 767px) {
                     padding-top: 35px;
@@ -319,7 +385,7 @@ html{
                 padding-bottom: 30px;
             }
         }
-            
+
         &_img {
             width: 44%;
             height: auto;
@@ -329,7 +395,7 @@ html{
                 width:100%;
             }
         }
-        
+
     }
 
     // .works {
@@ -369,7 +435,7 @@ html{
             @media screen and (max-width: 767px) {
                 display: block;
             }
-   
+
             p {
                 background-color: #FFF;
                 font-size: 1.6em;
@@ -377,10 +443,13 @@ html{
                 line-height: 1.8;
                 padding: 25px 20px;
             }
-            
+
             > li {
                 width: calc((100% - 40px) / 3);
                 @media screen and (max-width: 767px) {
+
+                    // Check !!
+                    // width: 100%; でいいかな？
                     width: 90%;
                     padding-bottom: 30px;
                 }
@@ -443,7 +512,7 @@ html{
                 }
             }
         }
-   
+
         .se-box {
             position: relative;
             p {
@@ -456,7 +525,7 @@ html{
                 z-index: 2;
             }
         }
-        
+
         &_txt {
             text-align: center;
             font-size: 4em;
@@ -490,7 +559,11 @@ html{
         .contact_txt {
             color: #ffffff;
             text-align: center;
+
+            // Check !!
+            // text-align: center;にしてあるので、左右のpaddingはいらないです！
             padding: 0px 271px 40px 271px;
+
             font-size: 2.0em;
             @media screen and (max-width: 767px) {
                 font-size: 1.8em;
@@ -528,7 +601,7 @@ html{
             color: #fff;
             background-color: #DDDDDD;
           }
-          
+
     }
     .footer {
         text-align: center;

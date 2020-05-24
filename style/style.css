@@ -53,6 +53,11 @@ table {
   border-spacing: 0;
 }
 
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -70,20 +75,28 @@ html .body {
   font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 }
 
-html .body .inner {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-}
-
 @media screen and (max-width: 767px) {
-  html .body .inner {
-    padding: 0 20px;
+  html .body .pc {
+    display: none !important;
   }
 }
 
+@media screen and (min-width: 768px) {
+  html .body .sp {
+    display: none !important;
+  }
+}
+
+html .body .inner {
+  max-width: 1040px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
 html .body .inner-large {
-  max-width: 1200px;
+  max-width: 1240px;
+  padding: 0 20px;
   width: 100%;
   margin: 0 auto;
 }
@@ -208,20 +221,38 @@ html .body .header_nav {
   display: flex;
   float: right;
   padding-top: 10px;
-  -webkit-box-sizing: border-box;
-  box-sizing: border-box;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
+  -webkit-transform: translateY(-100%);
+          transform: translateY(-100%);
 }
 
-html .body .header_nav .header_nav.active {
+html .body .header_nav.active {
   -webkit-transform: translateY(0%);
           transform: translateY(0%);
 }
 
 @media screen and (max-width: 767px) {
   html .body .header_nav {
-    display: none;
+    background-color: #282F35;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  html .body .header_nav > li {
+    margin-bottom: 30px;
   }
 }
 
@@ -235,7 +266,6 @@ html .body .header_nav a {
 }
 
 html .body .header_nav a:before {
-  left: 20%;
   right: 20%;
   top: 50%;
   content: '';
@@ -254,8 +284,7 @@ html .body .header_nav a:hover {
 }
 
 html .body .header_nav a:hover:before {
-  left: 10%;
-  right: 10%;
+  right: -20%;
   opacity: 1;
 }
 
@@ -268,12 +297,6 @@ html .body .header .toggle {
   height: 42px;
   cursor: pointer;
   z-index: 3;
-}
-
-@media screen and (min-width: 768px) {
-  html .body .header .toggle {
-    display: none;
-  }
 }
 
 html .body .header .toggle span {
