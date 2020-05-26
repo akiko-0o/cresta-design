@@ -1,5 +1,8 @@
 @charset 'UTF-8';
 @import './reset';
+* {
+    box-sizing: border-box;
+}
 html{
     font-size: 62.5%;
     @media screen and (max-width: 767px) {
@@ -11,21 +14,37 @@ html{
   
 .body{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
+
+    .pc {
+        @media screen and (max-width: 767px) {
+            display: none !important;
+        }
+    }
+    .sp{
+        @media screen and (min-width: 768px) {
+            display: none !important;
+        }
+    }
     
     // レイアウト
     .inner {
-        max-width: 1000px;
+        max-width: 1040px;
+        padding: 0 20px;
         width: 100%;
         margin: 0 auto;
         @media screen and (max-width: 767px) {
-            padding: 0 20px;
+            padding: 0 10px;
         }
     }
 
     .inner-large {
-        max-width: 1200px;
+        max-width: 1240px;
+        padding: 0 20px;
         width: 100%;
         margin: 0 auto;  
+        @media screen and (max-width: 767px) {
+            padding: 0 10px;
+        }
     }
 
     img{
@@ -57,7 +76,7 @@ html{
             margin-bottom: 17px;
             @media screen and (max-width: 767px) {
                 width: 30%;
-                height: 2px;
+                height: 5px;
             }
         }
         &.white{
@@ -95,19 +114,17 @@ html{
         left: 0;
         right: 0;
         z-index: 99;
-        @media screen and (max-width: 767px) {
-            padding: 30px 0 0;
-        }
+
+
+        
         &_inner {
+            position: fixed;
             width: 100%;
             margin: 0 auto;
             padding-top: 19px;
-            max-width: 1200px;
+            padding-left: 20px;
             display: flex;
             justify-content: space-between;
-            @media screen and (max-width: 767px) {
-                max-width: 345px;
-            }
         }
 
         &_logo {
@@ -121,17 +138,32 @@ html{
             display: flex;
             float: right;
             padding-top: 10px;
-            -webkit-box-sizing: border-box;
-            box-sizing: border-box;
             -webkit-transition: all 0.35s ease;
             transition: all 0.35s ease;
 
             .header_nav.active{
                 transform: translateY(0%);
-                }
+            }
 
             @media screen and (max-width: 767px) {
-                display:none;
+                transform: translateY(-100%);
+                background-color: #282F35;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100vw;
+                height: 100vh;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                &.active{
+                    transform: translateY(0%);
+                }
+
+                > li {
+                    margin-bottom: 30px;
+                }
             }
 
 
@@ -144,7 +176,6 @@ html{
                 position: relative;
 
                 &:before {
-                    left: 20%;
                     right: 20%;
                     top: 50%;
                     content: '';
@@ -162,11 +193,16 @@ html{
                     color: #ffffff;
                   }
                   &:hover:before {
-                    left: 10%;
-                    right: 10%;
+                    right: -18%;
                     opacity: 1;
                   }
             } 
+        }
+
+        .transform{
+            background: #282F35;
+            width: 100%;
+            padding: 20px;
         }
 
         .toggle {
@@ -178,24 +214,20 @@ html{
             height: 42px;
             cursor: pointer;
             z-index: 3;
-            
-            @media screen and (min-width: 768px) {
-                display: none;
-            }
 
             span {
-                background-color: #FFF;
+                align-items: center;
                 display: block;
                 position: absolute;
                 width: 30px;
-                border-bottom: solid 3px #000;
+                border-bottom: solid 3px #fff;
                 -webkit-transition: .35s ease-in-out;	/*変化の速度を指定*/
                 -moz-transition: .35s ease-in-out;		/*変化の速度を指定*/
                 transition: .35s ease-in-out;			/*変化の速度を指定*/
                 left: 6px;
             }
              
-            &:nth-child(1) {
+            &:-child(1) {
                 top: 9px;
             }
              
@@ -259,14 +291,17 @@ html{
                     font-size: 3.4em;
                     text-align: center;
                     letter-spacing: 1;
+                    margin-bottom: 20px;
                 }
             }
             span:nth-child(2) {
                 font-size: 4em;
                 text-align: center;
+                display: inline-block;
                 padding-top: 35px;
                 @media screen and (max-width: 767px) {
-                    padding-top: 35px;
+                    display: block;
+                    margin-top: 35px;
                     text-align: center;
                     font-size: 3em;
                 }
@@ -292,18 +327,30 @@ html{
             font-size: 3em;
             letter-spacing: 3px;
             line-height: 1.8;
+            & br:nth-child(1){
+                @media screen and (min-width: 768px) {
+                    display: none;
+                }
+            }
+            & br:nth-child(2) {
+                @media screen and (max-width: 767px) {
+                    display: none;
+                }
+            }
             @media screen and (max-width: 767px) {
                 font-size: 1.9em;
                 padding-top: 55px;
                 margin: 0;
                 line-height: 1;
                 letter-spacing: 0;
+
             }
         }
 
         &_box {
             display: flex;
             justify-content: space-between;
+            align-items: center;
             @media screen and (max-width: 767px) {
                 display: block;
             }
@@ -332,9 +379,6 @@ html{
         
     }
 
-    // .works {
-    //     margin-top: 75px;
-    //     position: relative;
         .works_backimg {
             background-repeat: no-repeat;
             background-size: cover;
@@ -350,24 +394,16 @@ html{
             padding-bottom: 70px;
         }
 
-        // &_backimg {
-        //     background-repeat: no-repeat;
-        //     background-size: cover;
-        //     background-position: center;
-        //     max-width: 100%;
-        //     height: auto;
-        // }
-
         .works_images{
             display: flex;
             flex-direction: row;
             max-width: 1000px;
-            // height: auto;
             margin-bottom: 80px;
             margin-top: 80px;
-            justify-content: space-around;
+            justify-content: space-between;
             @media screen and (max-width: 767px) {
                 display: block;
+                vertical-align: middle;
             }
    
             p {
@@ -381,7 +417,7 @@ html{
             > li {
                 width: calc((100% - 40px) / 3);
                 @media screen and (max-width: 767px) {
-                    width: 90%;
+                    width: 100%;
                     padding-bottom: 30px;
                 }
             }
@@ -409,6 +445,7 @@ html{
             justify-content: space-around;
             @media screen and (max-width: 767px) {
                 display: block;
+                padding-bottom: 20px;
             }
 
             > li {
@@ -490,7 +527,7 @@ html{
         .contact_txt {
             color: #ffffff;
             text-align: center;
-            padding: 0px 271px 40px 271px;
+            padding-bottom: 40px;
             font-size: 2.0em;
             @media screen and (max-width: 767px) {
                 font-size: 1.8em;
@@ -523,6 +560,9 @@ html{
         transition: .4s;
         font-size: 1.6em;
         overflow: hidden;
+        @media screen and (max-width: 767px) {
+            padding: 20px 80px;
+        }
 
           &:hover {
             color: #fff;
@@ -540,3 +580,5 @@ html{
 }
 
 }
+
+

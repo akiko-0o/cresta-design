@@ -22,13 +22,13 @@
             </h1>
             <nav>
                 <ul class="header_nav">
-                    <li><a href="#">Concept</a></li>
-                    <li><a href="#">Service</a></li>
-                    <li><a href="#">Works</a></li>
-                    <li><a href="#">Contact</a></li>
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
-            <div class="toggle">
+            <div class="toggle sp">
                 　　<span></span>
                 　　<span></span>
                 　　<span></span>
@@ -45,15 +45,16 @@
 
         <h2 class="slider_logo">
             <span>Design for Smile.<br></span>
-            <span>快適なオフィスをデザインする</span>
+            <span>快適なオフィスを<br class="sp">
+                <br class="sp">デザインする</span>
         </h2>
     </div>
 
         <div class="wrap">
-            <section class="concept">
+            <section class="concept" id="concept">
                 <div class="inner">
                     <h3 class="title">CONCEPT</h3>
-                    <p class="concept_txt">"働きたくなる空間"をデザインすることで<br>
+                    <p class="concept_txt">"働きたくなる空間"をデザインする<br>ことで<br>
                             人々を幸せにする。
                     </p>
                     <div class="concept_box">
@@ -70,39 +71,41 @@
                 </div>
                 </section>
 
-            <section class="works_backimg" style="background-image: url(./img/index/works-bgi@2x.jpg);">
-                    <div class="inner-large">
-                        <h3 class="title white">Works</h3>
+            <section class="works_backimg" id="works" style="background-image: url(./img/index/works-bgi@2x.jpg);">
+                <div class="inner-large">
+                    <h3 class="title white">Works</h3>
+                </div>
+                <div class="inner">
+                    <ul class="works_images">
+                        <li>
+                            <a href="">
+                                <img src="./img/index/card-img01@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/index/card-img02@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./img/index/card-img03@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
+                            </a>  
+                        </li>
+                    </ul>
+
+                    <div class="works_btn">
+                        <a href="#" class="botton">View more</a>
                     </div>
-                    <div class="inner">
-                        <ul class="works_images">
-                            <li>
-                                <a href="">
-                                    <img src="./img/index/card-img01@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./img/index/card-img02@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="">
-                                    <img src="./img/index/card-img03@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                                </a>  
-                            </li>
-                        </ul>
-                        <div class="works_btn">
-                            <a href="#" class="botton">View more</a>
-                        </div>
-                    </div>
-                    <div class="inner-large">
-                        <h3 class="subtitle left">Our Works</h3>
-                    </div>
+                </div>
+
+                 <div class="inner-large">
+                    <h3 class="subtitle left">Our Works</h3>
+                </div>
             </section>
         
 
-        <section class="service">
+        <section class="service" id="service">
             <div class="inner">
                 <h3 class="title">Service</h3>
             </div>
@@ -135,24 +138,22 @@
                 <div class="inner-large">
                     <h3 class="subtitle">Our Service</h3>
                 </div>
-  
         </section>
 
-        <section class="img" style="background-image: url(./img/index/contact-bgi@2x.jpg);">
-                <div class="inner-large">
-                    <h3 class="title white">Contact</h3>
-                </div>  
+        <section class="img" id="contact" style="background-image: url(./img/index/contact-bgi@2x.jpg);">
+            <div class="inner-large">
+                <h3 class="title white">Contact</h3>
+            </div>  
                 
-                <div class="inner">
-                    <div class="contact_txt">お気軽にご相談ください。</div>
-                    <div class="contact_btn">
-                        <a href="#" class="botton">Contact</a>
-                    </div>
-                    <h3 class="subtitle left">Contact us</h3>
+            <div class="inner">
+                <p class="contact_txt">お気軽にご相談ください。</p>
+                <div class="contact_btn">
+                    <a href="#" class="botton">Contact</a>
                 </div>
-            </section>
-    </div>
-
+                <h3 class="subtitle left">Contact us</h3>
+            </div>
+        </section>
+   
     <footer class="footer">
         <span>©︎cresta.design all rights reserved</span>
     </footer>
@@ -185,9 +186,33 @@
     　}
     　});
     });
-</script>
 
-    </script>
+$(function(){
+  var imgHeight = $('.concept').outerHeight();
+  var header = $('.header_inner');
+
+  $(window).on('load scroll', function(){
+     if ($(window).scrollTop() < imgHeight) {
+       header.removeClass('transform');
+     }else {
+       header.addClass('transform');
+     }
+  });
+});
+
+
+    $('a[href^="#"]').click(function() {
+        var speed = 500;
+        var href = $(this).attr("href");
+        var target = $(href == "#" || href == "" ? "html" : href);
+        var position = target.offset().top;
+        position = position - $("header").outerHeight();
+        var url = location.href;
+
+        $("html, body").animate({ scrollTop: position }, speed, "swing");
+        return false;
+    });
+</script>
 
 </body>
 </html>
