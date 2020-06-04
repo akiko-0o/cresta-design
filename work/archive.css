@@ -71,7 +71,7 @@ html .header {
   position: relative;
 }
 
-html .header__bg::after {
+html .header__bg::before {
   content: "";
   position: absolute;
   top: 0;
