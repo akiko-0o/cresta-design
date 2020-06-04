@@ -1,1 +1,160 @@
-/* No CSS *//*# sourceMappingURL=archive.css.map */
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+html a {
+  text-decoration: none;
+}
+
+html .header {
+  background-image: url(../img/works_img/works_header@2x.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: 'Noto Serif', serif;
+}
+
+html .header__nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 40px 120px 10px 120px;
+}
+
+html .header li {
+  display: inline;
+  padding-left: 30px;
+}
+
+html .header li a {
+  color: #fff;
+  font-size: 16px;
+}
+
+html .header h1 {
+  font-size: 60px;
+  color: #fff;
+  text-align: center;
+  padding-bottom: 79px;
+  letter-spacing: 0.4rem;
+}
+
+html h4 {
+  padding-left: 120px;
+  padding-top: 16px;
+  font-family: 'Rubik', sans-serif;
+}
+
+html .inner {
+  padding: 32.8px 220px 102px 222px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+html .leftblock {
+  padding-right: 50px;
+}
+
+html .leftblock__flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 25px;
+  border-bottom: 1px solid #AFAFAF;
+  padding-top: 25px;
+}
+
+html .leftblock__img {
+  margin-right: 29.8px;
+}
+
+html .leftblock p:nth-child(1) {
+  font-size: 14px;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  float: left;
+}
+
+html .leftblock p:nth-child(2) {
+  font-size: 13px;
+  font-family: 'Rubik', sans-serif;
+  color: #8B8B8B;
+  float: right;
+  margin-right: 495.1px;
+}
+
+html .leftblock p:nth-child(3) {
+  font-size: 20px;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0.025em;
+  line-height: 1.4;
+  padding-bottom: 13.1px;
+  padding-top: 27.3px;
+}
+
+html .leftblock p:nth-child(4) {
+  font-size: 14px;
+  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  letter-spacing: 0.025em;
+  line-height: 1.7;
+}
+/*# sourceMappingURL=archive.css.map */
