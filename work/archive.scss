@@ -13,17 +13,7 @@ html {
         background-size: cover;
         background-position: center;
         font-family: 'Noto Serif', serif;
-        position: relative;
-        &__bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.4);
-            
-          }
+
 
         &__nav {
             display: flex;
@@ -143,9 +133,10 @@ html {
                 &:last-child {
                     padding-right: 19px;
                 }
-            }
-            a {
-                text-decoration: none;
+                a {
+                    text-decoration: none;
+                    color: #01161F;
+                }
             }
         }
     }

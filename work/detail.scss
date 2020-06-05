@@ -13,16 +13,8 @@ html {
         background-size: cover;
         background-position: center;
         font-family: 'Noto Serif', serif;
-        position: relative;
-        &__bg::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 100%;
-            width: 100%;
-            background: rgba(0, 0, 0, 0.4);
-          }
+ 
+
 
         &__nav {
             display: flex;
@@ -112,17 +104,31 @@ html {
                 line-height: 1.6;
                 padding-bottom: 34px;
                 padding-left: 10px;
-                &::before {
-                    content: "";
-                    display: block;
-                    position: absolute;
-                    left:17.5%;
-                    border-radius: 6px;
-                    width: 4px;
-                    height: 20px;
-                    background-color: #01161F;
-                }
             }
+            &_1::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left: 29%;
+                bottom: -135%;
+                width: 5px;
+                height: 15px;
+                background-color: #01161F;
+                
+            }
+            &_2::before {
+                content: "";
+                display: block;
+                position: absolute;
+                left:29%;
+                bottom: -171%;
+                width: 5px;
+                height: 51px;
+                background-color: #01161F;
+                
+            }
+
+
             dd {
                 font-size: 16px;
                 letter-spacing: 0.05em;

@@ -68,17 +68,6 @@ html .header {
   background-size: cover;
   background-position: center;
   font-family: 'Noto Serif', serif;
-  position: relative;
-}
-
-html .header__bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
 }
 
 html .header__nav {
@@ -187,14 +176,25 @@ html .leftblock__news02 dt {
   padding-left: 10px;
 }
 
-html .leftblock__news02 dt::before {
+html .leftblock__news02_1::before {
   content: "";
   display: block;
   position: absolute;
-  left: 17.5%;
-  border-radius: 6px;
-  width: 4px;
-  height: 20px;
+  left: 29%;
+  bottom: -135%;
+  width: 5px;
+  height: 15px;
+  background-color: #01161F;
+}
+
+html .leftblock__news02_2::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 29%;
+  bottom: -171%;
+  width: 5px;
+  height: 51px;
   background-color: #01161F;
 }
 

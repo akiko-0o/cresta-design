@@ -68,17 +68,6 @@ html .header {
   background-size: cover;
   background-position: center;
   font-family: 'Noto Serif', serif;
-  position: relative;
-}
-
-html .header__bg::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.4);
 }
 
 html .header__nav {
@@ -225,8 +214,9 @@ html .jumpmenu__wrap li:last-child {
   padding-right: 19px;
 }
 
-html .jumpmenu__wrap a {
+html .jumpmenu__wrap li a {
   text-decoration: none;
+  color: #01161F;
 }
 
 html .footer p {
