@@ -33,7 +33,7 @@ html{
         width: 100%;
         margin: 0 auto;
         @media screen and (max-width: 767px) {
-            padding: 0 10px;
+            padding: 0 15px;
         }
     }
 
@@ -82,6 +82,7 @@ html{
         &.white{
             color: white;
             text-align: right;
+            font-weight: bold;
             &:after{
                 background-color: #FFF;
             }
@@ -117,7 +118,7 @@ html{
 
 
         
-        &_inner {
+        &__inner {
             position: fixed;
             width: 100%;
             margin: 0 auto;
@@ -127,21 +128,24 @@ html{
             justify-content: space-between;
         }
 
-        &_logo {
+        &__logo {
             display: flex;
             float: left;
             width: auto;
-
+            @media screen and (max-width: 767px) {
+                padding-top: 10px;
+            }
         }
 
-        &_nav {
+        &__nav {
             display: flex;
             float: right;
             padding-top: 10px;
-            -webkit-transition: all 0.35s ease;
-            transition: all 0.35s ease;
+            transition-duration:3s;
+            // -webkit-transition: all 0.35s ease;
+            // transition: all 0.35s ease;
 
-            .header_nav.active{
+            .header__nav.active{
                 transform: translateY(0%);
             }
 
@@ -156,7 +160,7 @@ html{
                 flex-direction: column;
                 align-items: center;
                 justify-content: center;
-
+                transition-duration:3s;
                 &.active{
                     transform: translateY(0%);
                 }
@@ -205,7 +209,7 @@ html{
             padding: 20px;
         }
 
-        .toggle {
+        .header__nav_sp {
             display: block;
             position: fixed;
             right: 40px;
@@ -275,13 +279,14 @@ html{
             }
         }
 
-        .slider_logo {
+        .slider__logo {
             position: absolute;
             top: 54%;
-            left: 8%;
+            left: 7%;
             color: #ffffff;
             @media screen and (max-width: 767px) {
                 top: 35%;
+                left: 6%;
             }
             span:nth-child(1) {
                 font-size: 7em;
@@ -310,7 +315,6 @@ html{
     }
 
     .concept {
-
         .title {
             padding-top: 118px;
         }
@@ -321,11 +325,11 @@ html{
                 padding: 0 auto;
             }
         }
-        &_txt{
+        &__txt{
             margin: 70px;
             text-align: center;
             font-size: 3em;
-            letter-spacing: 3px;
+            letter-spacing: 0.05em;
             line-height: 1.8;
             & br:nth-child(1){
                 @media screen and (min-width: 768px) {
@@ -341,13 +345,13 @@ html{
                 font-size: 1.9em;
                 padding-top: 55px;
                 margin: 0;
-                line-height: 1;
-                letter-spacing: 0;
+                line-height: 1.5;
+                letter-spacing: 0.05em;
 
             }
         }
 
-        &_box {
+        &__box {
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -356,7 +360,7 @@ html{
             }
         }
 
-        &_sentence {
+        &__sentence {
             width: 44%;
             font-size: 1.6em;
             line-height: 1.9;
@@ -367,19 +371,18 @@ html{
             }
         }
             
-        &_img {
+        &__img {
             width: 44%;
             height: auto;
             vertical-align: bottom;
             @media screen and (max-width: 767px) {
-
                 width:100%;
             }
         }
         
     }
 
-        .works_backimg {
+        .works {
             background-repeat: no-repeat;
             background-size: cover;
             background-position: center;
@@ -394,7 +397,7 @@ html{
             padding-bottom: 70px;
         }
 
-        .works_images{
+        &__images{
             display: flex;
             flex-direction: row;
             max-width: 1000px;
@@ -419,10 +422,12 @@ html{
                 @media screen and (max-width: 767px) {
                     width: 100%;
                     padding-bottom: 30px;
+                    padding-left: 10px;
+                    padding-right: 10px;
                 }
             }
         }
-        .works_btn {
+        &__btn {
             text-align: center;
             padding-bottom: 70px;
         }
@@ -433,7 +438,7 @@ html{
             padding-top: 118px;
         }
 
-        &_images {
+        &__images {
             display: flex;
             flex-direction: row;
             padding-top: 80px;
@@ -481,7 +486,7 @@ html{
             }
         }
    
-        .se-box {
+        &__box {
             position: relative;
             p {
                 position: absolute;
@@ -494,7 +499,7 @@ html{
             }
         }
         
-        &_txt {
+        &__txt {
             text-align: center;
             font-size: 4em;
             color: #FFF;
@@ -512,7 +517,7 @@ html{
 
     }
 
-    .img {
+    .contact {
         background-position: center;
         background-size: cover;
         background-repeat: no-repeat;
@@ -524,7 +529,7 @@ html{
             }
         }
 
-        .contact_txt {
+        &__txt {
             color: #ffffff;
             text-align: center;
             padding-bottom: 40px;
@@ -535,7 +540,7 @@ html{
             }
         }
 
-        .contact_btn {
+        &__btn {
             text-align: center;
             @media screen and (max-width: 767px) {
                 margin-top: 40px
@@ -556,6 +561,7 @@ html{
         border-radius: 30px;
         text-decoration: none;
         color: #171717;
+        font-weight: bold;
         background-color: #F7D43F;
         transition: .4s;
         font-size: 1.6em;
