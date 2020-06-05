@@ -108,24 +108,22 @@ html {
             &_1::before {
                 content: "";
                 display: block;
-                position: absolute;
-                left: 29%;
-                bottom: -135%;
                 width: 5px;
                 height: 15px;
                 background-color: #01161F;
-                
+                position: absolute;
+                left: 215px;
+                bottom: -870px;
             }
             &_2::before {
                 content: "";
                 display: block;
-                position: absolute;
-                left:29%;
-                bottom: -171%;
                 width: 5px;
                 height: 51px;
                 background-color: #01161F;
-                
+                position: absolute;
+                left: 215px;
+                bottom: -1135px;
             }
 
 
