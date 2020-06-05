@@ -229,8 +229,8 @@ html .body .header__nav {
   display: flex;
   float: right;
   padding-top: 10px;
-  -webkit-transition-duration: 3s;
-          transition-duration: 3s;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
 }
 
 html .body .header__nav .header__nav.active {
@@ -258,8 +258,6 @@ html .body .header__nav .header__nav.active {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    -webkit-transition-duration: 3s;
-            transition-duration: 3s;
   }
   html .body .header__nav.active {
     -webkit-transform: translateY(0%);
