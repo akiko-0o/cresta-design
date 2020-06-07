@@ -98,20 +98,41 @@ html .header h1 {
   letter-spacing: 0.4rem;
 }
 
-html h4 {
+html .breadcrumb {
   padding-left: 120px;
   padding-top: 16px;
+  font-size: 14px;
   font-family: 'Rubik', sans-serif;
 }
 
+html .breadcrumb li {
+  display: inline;
+}
+
+html .breadcrumb li::after {
+  content: '/';
+  display: inline-block;
+  padding: 0 2px;
+}
+
+html .breadcrumb li:last-child::after {
+  display: none;
+}
+
+html .breadcrumb a {
+  color: #3E3E3E;
+}
+
 html .inner {
-  padding: 32.8px 220px 102px 222px;
+  max-width: 1000px;
+  margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
 }
 
 html .leftblock {
+  padding-top: 57.8px;
   padding-right: 50px;
 }
 
@@ -128,21 +149,19 @@ html .leftblock__img {
   margin-right: 29.8px;
 }
 
-html .leftblock p:nth-child(1) {
+html .leftblock time {
   font-size: 14px;
   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  float: left;
 }
 
-html .leftblock p:nth-child(2) {
+html .leftblock span {
   font-size: 13px;
   font-family: 'Rubik', sans-serif;
   color: #8B8B8B;
-  float: right;
-  margin-right: 495.1px;
+  padding-left: 17.5px;
 }
 
-html .leftblock p:nth-child(3) {
+html .leftblock h4 {
   font-size: 20px;
   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0.025em;
@@ -151,7 +170,7 @@ html .leftblock p:nth-child(3) {
   padding-top: 27.3px;
 }
 
-html .leftblock p:nth-child(4) {
+html .leftblock p {
   font-size: 14px;
   font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
   letter-spacing: 0.025em;
@@ -177,10 +196,28 @@ html .rightblock li:last-child {
 
 html .rightblock a {
   color: #01161F;
+  position: relative;
+  padding-left: 20px;
+}
+
+html .rightblock a:before {
+  content: '';
+  width: 6px;
+  height: 10px;
+  background-image: url(../img/works_img/arrow.svg);
+  background-repeat: no-repeat;
+  background-size: 6px 10px;
+  background-position: center;
+  position: absolute;
+  left: 2px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 html .jumpmenu {
   background-color: #F2F2F2;
+  margin-top: 102px;
 }
 
 html .jumpmenu__wrap {
@@ -193,7 +230,7 @@ html .jumpmenu__wrap {
 }
 
 html .jumpmenu__wrap_button {
-  padding: 5px 14.4px 5px 9.6px;
+  padding: 7px 12px 7px 12px;
   text-align: center;
   text-decoration: none;
   font-family: 'Noto Serif', serif;
