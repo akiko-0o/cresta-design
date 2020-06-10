@@ -1,17 +1,4 @@
-@charset 'UTF-8';
-@import './reset';
-* {
-    box-sizing: border-box;
-}
-html{
-    font-size: 62.5%;
-    @media screen and (max-width: 767px) {
-        width: 100%;
-        height: auto;
-        padding: 0;
-        margin: 0 auto;
-    }
-  
+
 .body{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 
@@ -579,7 +566,3 @@ html{
     }
 
 }
-
-}
-
-
