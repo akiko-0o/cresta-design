@@ -10,3 +10,45 @@ html{
         margin: 0 auto;
     }
 }
+
+.pc {
+    @media screen and (max-width: 767px) {
+        display: none !important;
+    }
+}
+.sp{
+    @media screen and (min-width: 768px) {
+        display: none !important;
+    }
+}
+
+// レイアウト
+.inner {
+    max-width: 1040px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+        padding: 0 15px;
+    }
+}
+
+.inner-large {
+    max-width: 1240px;
+    padding: 0 20px;
+    width: 100%;
+    margin: 0 auto;
+    @media screen and (max-width: 767px) {
+        padding: 0 10px;
+    }
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+    vertical-align: bottom;
+}
+
+a {
+    text-decoration: none;
+}

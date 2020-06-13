@@ -1,5 +1,5 @@
 
-.body{
+body.index{
     font-family: 'Noto Serif', 'Noto Serif JP', sans-serif;
 
     .pc {
@@ -12,7 +12,7 @@
             display: none !important;
         }
     }
-    
+
     // レイアウト
     .inner {
         max-width: 1040px;
@@ -28,7 +28,7 @@
         max-width: 1240px;
         padding: 0 20px;
         width: 100%;
-        margin: 0 auto;  
+        margin: 0 auto;
         @media screen and (max-width: 767px) {
             padding: 0 10px;
         }
@@ -96,7 +96,7 @@
     }
 
     // スタイル
-    
+
     .header {
         position: absolute;
         left: 0;
@@ -182,7 +182,7 @@
                     right: -18%;
                     opacity: 1;
                   }
-            } 
+            }
         }
 
         .transform{
@@ -212,25 +212,25 @@
                 transition: .35s ease-in-out;			/*変化の速度を指定*/
                 left: 6px;
             }
-             
+
             &:-child(1) {
                 top: 9px;
             }
-             
+
             &:nth-child(2) {
                 top: 18px;
             }
-             
+
             &:nth-child(3) {
                 top: 27px;
             }
-    
+
             &.active span:nth-child(1) {
             top: 18px;
             left: 6px;
             transform: rotate(-45deg);
             }
-    
+
             &.active span:nth-child(2){
                 opacity: 0;
             }
@@ -352,7 +352,7 @@
                 padding-bottom: 30px;
             }
         }
-            
+
         &__img {
             width: 44%;
             height: auto;
@@ -361,7 +361,7 @@
                 width:100%;
             }
         }
-        
+
     }
 
         .works {
@@ -390,7 +390,7 @@
                 display: block;
                 vertical-align: middle;
             }
-   
+
             p {
                 background-color: #FFF;
                 font-size: 1.6em;
@@ -398,7 +398,7 @@
                 line-height: 1.8;
                 padding: 25px 20px;
             }
-            
+
             > li {
                 width: calc((100% - 40px) / 3);
                 @media screen and (max-width: 767px) {
@@ -467,7 +467,7 @@
                 }
             }
         }
-   
+
         &__box {
             position: relative;
             p {
@@ -480,7 +480,7 @@
                 z-index: 2;
             }
         }
-        
+
         &__txt {
             text-align: center;
             font-size: 4em;
@@ -556,7 +556,7 @@
             color: #fff;
             background-color: #DDDDDD;
           }
-          
+
     }
     .footer {
         text-align: center;

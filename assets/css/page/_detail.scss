@@ -1,38 +1,5 @@
 
-html {
-    a {
-        text-decoration: none;
-    }
-    .header {
-        background-image: url(../assets/img/common/works_header@2x.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        font-family: 'Noto Serif', serif;
- 
-        &__nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 40px 120px 10px 120px;
-        }
-
-        li {
-            display: inline;
-            padding-left: 30px;
-            a {
-                color: #fff;
-                font-size: 16px;
-            }
-        }
-        h1 {
-            font-size: 60px;
-            color: #fff;
-            text-align: center;
-            padding-bottom: 79px;
-            letter-spacing: 0.4rem;
-        }
-    }
-
+body.detail {
 
     .breadcrumb {
         padding-left: 120px;
@@ -41,29 +8,24 @@ html {
         font-family: 'Rubik', sans-serif;
         li {
             display: inline;
-            
-            
+
+
             &::after{
                 content: '/';
                 display: inline-block;
                 padding: 0 2px;
               }
-              
+
             &:last-child::after{
                 display: none;
               }
-            
+
         }
         a {
             color: #3E3E3E;
         }
     }
 
-    .inner {
-        max-width: 1000px;
-        margin: 0 auto;
-        display: flex;
-    }
     .leftblock {
         padding-right: 77px;
         padding-top: 64.8px;
@@ -92,7 +54,7 @@ html {
             padding-top: 29.2px;
             padding-bottom: 36px;
             line-height: 2;
-            
+
         }
 
         h3 {
@@ -122,7 +84,7 @@ html {
             padding-left: 15px;
             position: relative;
             margin: 80px 0 20px;
-    
+
             &:before{
                 content: '';
                 width: 5px;
