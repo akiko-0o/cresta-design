@@ -1,0 +1,22 @@
+.breadcrumb {
+    padding-left: 120px;
+    padding-top: 16px;
+    font-size: 14px;
+    font-family: 'Rubik', sans-serif;
+    li {
+        display: inline;
+        &::after{
+            content: '/';
+            display: inline-block;
+            padding: 0 2px;
+          }
+
+        &:last-child::after{
+            display: none;
+          }
+
+    }
+    a {
+        color: #3E3E3E;
+    }
+}

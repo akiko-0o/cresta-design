@@ -13,7 +13,7 @@
 
 
 <body class="index">
-    <header class="header">   
+    <header class="header">
         <div class="header__inner">
             <h1 class="header__logo">
                 <a href="#">
@@ -33,7 +33,7 @@
                 　　<span></span>
                 　　<span></span>
             </div>
-        </div> 
+        </div>
     </header>
 
     <div class="mv">
@@ -89,18 +89,18 @@
                 <li>
                     <a href="">
                         <img src="./assets/img/index/card-img03@2x.jpg" alt=""><p>新規サイトを公開しました。今回のサイトは白と黒を基調としたミニマルなデザインになっています。</p>
-                    </a>  
+                    </a>
                 </li>
-            </ul>   
+            </ul>
             <div class="works__btn">
                 <a href="#" class="botton">View more</a>
             </div>
-        </div>  
+        </div>
          <div class="inner-large">
             <h3 class="subtitle left">Our Works</h3>
         </div>
     </section>
-        
+
 
     <section class="service" id="service">
         <div class="inner">
@@ -129,7 +129,7 @@
                             <img src="./assets/img/index/sevice-img03@2x.jpg" alt="">
                             <p class="service__txt">Direction</p>
                         </div>
-                    </a>  
+                    </a>
                 </li>
             </ul>
             <div class="inner-large">
@@ -140,7 +140,7 @@
     <section class="contact" id="contact" style="background-image: url(./assets/img/index/contact-bgi@2x.jpg);">
         <div class="inner-large">
             <h3 class="title white">Contact</h3>
-        </div>  
+        </div>
 
         <div class="inner">
             <p class="contact__txt">お気軽にご相談ください。</p>
@@ -150,14 +150,15 @@
             <h3 class="subtitle left">Contact us</h3>
         </div>
     </section>
-   
+
     <footer class="footer">
         <span>©︎cresta.design all rights reserved</span>
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    
+    <script src="./assets/js/common.js"></script>
+
     <script>
     $(function () {
         $('.slider').slick({
@@ -171,7 +172,7 @@
         })
     })
 
- 
+
     　$('.header__nav_sp').click(function() {
     　　$(this).toggleClass('active');
 
@@ -181,19 +182,6 @@
     　　$('.header__nav').removeClass('active');
     　}
     　});
-
-
-
-    var imgHeight = $('.concept').outerHeight();
-    var header = $('.header__inner');
-
-    $(window).on('load scroll', function(){
-        if ($(window).scrollTop() < imgHeight) {
-        header.removeClass('transform');
-        }else {
-        header.addClass('transform');
-        }
-    });
 
 
     $('a[href^="#"]').click(function() {
@@ -211,4 +199,3 @@
 
 </body>
 </html>
- 

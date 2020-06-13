@@ -1,7 +1,10 @@
 @charset 'UTF-8';
 
 // component
+@import 'component/sub-mv';
 @import 'component/jumpmenu';
+@import 'component/breadcrumb';
+@import 'component/side-nav';
 
 // layout
 @import 'layout/reset';
