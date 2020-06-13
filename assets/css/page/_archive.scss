@@ -1,80 +1,24 @@
 
-html {
-    a {
-        text-decoration: none;
-    }
-    .header {
-        background-image: url(../assets/img/common/works_header@2x.jpg);
-        background-repeat: no-repeat;
-        background-size: cover;
-        background-position: center;
-        font-family: 'Noto Serif', serif;
-
-
-        &__nav {
-            display: flex;
-            justify-content: space-between;
-            padding: 40px 120px 10px 120px;
-        }
-
-        li {
-            display: inline;
-            padding-left: 30px;
-            a {
-                color: #fff;
-                font-size: 16px;
-            }
-        }
-        h1 {
-            font-size: 60px;
-            color: #fff;
-            text-align: center;
-            padding-bottom: 79px;
-            letter-spacing: 0.4rem;
-        }
-    }
-
-    .breadcrumb {
-        padding-left: 120px;
-        padding-top: 16px;
-        font-size: 14px;
-        font-family: 'Rubik', sans-serif;
-        li {
-            display: inline;
-            
-            
-            &::after{
-                content: '/';
-                display: inline-block;
-                padding: 0 2px;
-              }
-              
-            &:last-child::after{
-                display: none;
-              }
-            
-        }
-        a {
-            color: #3E3E3E;
-        }
-    }
-
-
+body.archive {
 
     .inner {
         max-width: 1000px;
-        margin: 0 auto;
+        margin: 60px auto 0;
         display: flex;
     }
 
     .leftblock {
-        padding-top: 57.8px;
         padding-right: 50px;
+
         &__flex {
             display: flex;
             padding-bottom: 25px;
             border-bottom: 1px solid #AFAFAF;
             padding-top: 25px;
+
+            &:first-child {
+                padding-top: 0;
+            }
         }
         &__img {
             margin-right: 29.8px;
@@ -106,44 +50,6 @@ html {
     }
 
     .rightblock {
-        &__title {
-            font-size: 20px;
-            font-family: 'Noto Serif', serif;
-            padding-bottom: 22.8px;
-            padding-top: 25px;
-        }
-        li {
-            font-size: 14px;
-            font-family:"Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-            padding-bottom: 10px;
-        }
-        li:last-child {
-            padding-bottom: 26.2px;
-        }
-        a{
-            color: #01161F;
-            position: relative;
-            padding-left: 20px;
-            &:before{
-                content: '';
-                width: 6px;
-                height: 10px;
-                background-image: url(../img/common/arrow.svg);
-                background-repeat: no-repeat;
-                background-size: 6px 10px;
-                background-position: center;
-                position: absolute;
-                left: 2px;
-                top: 50%;
-                transform: translateY(-50%);
-            }
-        }
+
     }
-
-
-
-
-
-
-
 }

@@ -11,39 +11,39 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
 <body class="detail">
-    <div class="header_wrap">
-        <header class="header header__bg">
-            <div class="header__nav">
-                <img src="../assets/img/common/site-title.svg" alt="cresta-design">
-                <ul>
-                    <li>
-                        <a href="#">Concept</a>
-                    </li>
-                    <li>
-                        <a href="#">Service</a>
-                    </li>
-                    <li>
-                        <a href="#">Works</a>
-                    </li>
-                    <li>
-                        <a href="#">Contact</a>
-                    </li>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="#">
+                    <img src="../assets/img/common/site-title.svg" alt="creata design">
+                </a>
+            </h1>
+            <nav>
+                <ul class="header__nav">
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
                 </ul>
+            </nav>
+            <div class="header__nav_sp sp">
+                　　<span></span>
+                　　<span></span>
+                　　<span></span>
             </div>
-        </header>
-        <div class="works_detail">
-            <h1>Works</h1>
         </div>
+    </header>
+
+    <div class="sub-mv">
+        <h1>Works</h1>
     </div>
 
-    <div class="detail">
-
     <main>
-        <ol class="breadcrumb">
+        <ul class="breadcrumb">
             <li><a href="/">HOME</a></li>
             <li><a href="../archive/index.html">WORKS</a></li>
             <li>記事タイトル：土星の環から「雨」が降っていた、予想外の事実も</li>
-        </ol>
+        </ul>
         <div class="inner">
             <div class="leftblock">
                 <div class="leftblock__main">
@@ -62,32 +62,34 @@
                 <h4>News_H4 - チョコレートの起源、明らかになった2つの新事実チョコレートの起源、<br>明らかになった2つの新事実</h4>
                 <p>テキストはダミーです。月の重力は地球と比べてはるかに小さいが、それでも外気圏と呼ばれるごく薄い大気<br>の層が存在する。テキストはダミーです。月の重力は地球と比べてはるかに小さいが、それでも外気圏と呼ば<br>れるごく薄い大気の層が存在する。</p>
             </div>
-    
+
             <div class="rightblock">
-                <p class="rightblock__title">Archive</p>
-                <ul>
-                    <li>
-                        <a href="#">2019/08</a>
-                    </li>
-                    <li>
-                        <a href="#">2019/07</a>
-                    </li>
-                    <li>
-                        <a href="#">2019/06</a>
-                    </li>
-                </ul>
-                <p class="rightblock__title">Category</p>
-                <ul>
-                    <li>
-                        <a href="">ニュース</a>
-                    </li>
-                    <li>
-                        <a href="">イベント</a>
-                    </li>
-                    <li>
-                        <a href="">その他</a>
-                    </li>
-                </ul>
+                <nav class="side-nav">
+                    <p class="side-nav__title">Archive</p>
+                    <ul>
+                        <li>
+                            <a href="#">2019/08</a>
+                        </li>
+                        <li>
+                            <a href="#">2019/07</a>
+                        </li>
+                        <li>
+                            <a href="#">2019/06</a>
+                        </li>
+                    </ul>
+                    <p class="side-nav__title">Category</p>
+                    <ul>
+                        <li>
+                            <a href="#">ニュース</a>
+                        </li>
+                        <li>
+                            <a href="#">イベント</a>
+                        </li>
+                        <li>
+                            <a href="#">その他</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
     </main>
@@ -96,12 +98,12 @@
         <a href="#" class="btn__back">一覧へ</a>
     </div>
 
-
-</div>
-
     <footer class="footer">
         <p>&copy;cresta.design all rights reserved</p>
     </footer>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+
 </body>
 </html>

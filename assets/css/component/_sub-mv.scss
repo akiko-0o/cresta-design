@@ -1,0 +1,19 @@
+.sub-mv{
+    height: 240px;
+    width: 100%;
+    background-image: url(../img/common/works_header@2x.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    padding-top: 90px;
+
+    h1{
+        font-family: 'Noto Serif', serif;
+        font-size: 6.0rem;
+        font-weight: bold;
+        font-style: italic;
+        letter-spacing: 0.1em;
+        color: #FFF;
+        text-align: center;
+    }
+}

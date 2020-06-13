@@ -10,34 +10,41 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
 </head>
+
 <body class="archive">
-    <header class="header header__bg">
-        <div class="header__nav">
-            <img src="../assets/img/common/site-title.svg" alt="cresta-design">
-            <ul>
-                <li>
-                    <a href="#">Concept</a>
-                </li>
-                <li>
-                    <a href="#">Service</a>
-                </li>
-                <li>
-                    <a href="#">Works</a>
-                </li>
-                <li>
-                    <a href="#">Contact</a>
-                </li>
-            </ul>
+    <header class="header">
+        <div class="header__inner">
+            <h1 class="header__logo">
+                <a href="#">
+                    <img src="../assets/img/common/site-title.svg" alt="creata design">
+                </a>
+            </h1>
+            <nav>
+                <ul class="header__nav">
+                    <li><a href="#concept">Concept</a></li>
+                    <li><a href="#service">Service</a></li>
+                    <li><a href="#works">Works</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+            <div class="header__nav_sp sp">
+                　　<span></span>
+                　　<span></span>
+                　　<span></span>
+            </div>
         </div>
     </header>
-<div class="archive">
 
-    <h1>Works</h1>
+    <div class="sub-mv">
+        <h1>Works</h1>
+    </div>
+
     <main>
-        <ol class="breadcrumb">
+        <ul class="breadcrumb">
             <li><a href="/">HOME</a></li>
-            <li>WORKS</a></li>
-        </ol>
+            <li>WORKS</li>
+        </ul>
+
         <div class="inner">
             <div class="leftblock">
                 <ul>
@@ -174,35 +181,36 @@
                 </ul>
 
             </div>
-    
+
             <div class="rightblock">
-                <p class="rightblock__title">Archive</p>
-                <ul>
-                    <li>
-                        <a href="#">2019/08</a>
-                    </li>
-                    <li>
-                        <a href="#">2019/07</a>
-                    </li>
-                    <li>
-                        <a href="#">2019/06</a>
-                    </li>
-                </ul>
-                <p class="rightblock__title">Category</p>
-                <ul>
-                    <li>
-                        <a href="#">ニュース</a>
-                    </li>
-                    <li>
-                        <a href="#">イベント</a>
-                    </li>
-                    <li>
-                        <a href="#">その他</a>
-                    </li>
-                </ul>
+                <nav class="side-nav">
+                    <p class="side-nav__title">Archive</p>
+                    <ul>
+                        <li>
+                            <a href="#">2019/08</a>
+                        </li>
+                        <li>
+                            <a href="#">2019/07</a>
+                        </li>
+                        <li>
+                            <a href="#">2019/06</a>
+                        </li>
+                    </ul>
+                    <p class="side-nav__title">Category</p>
+                    <ul>
+                        <li>
+                            <a href="#">ニュース</a>
+                        </li>
+                        <li>
+                            <a href="#">イベント</a>
+                        </li>
+                        <li>
+                            <a href="#">その他</a>
+                        </li>
+                    </ul>
+                </nav>
             </div>
         </div>
-
     </main>
 
     <div class="jumpmenu">
@@ -222,12 +230,13 @@
             <a href="#" class="jumpmenu__wrap_button">NEXT &gt;</a>
         </div>
     </div>
-    
-</div>
 
     <footer class="footer">
         <p>&copy;cresta.design all rights reserved</p>
     </footer>
-    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+    <script src="../assets/js/common.js"></script>
+
 </body>
 </html>
