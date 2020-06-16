@@ -1,6 +1,4 @@
 @charset "UTF-8";
-<<<<<<< HEAD
-=======
 .sub-mv {
   height: 240px;
   width: 100%;
@@ -21,7 +19,6 @@
   text-align: center;
 }
 
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 .jumpmenu {
   background-color: #F2F2F2;
   margin-top: 102px;
@@ -31,16 +28,12 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-<<<<<<< HEAD
-  margin-left: 42%;
-=======
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
   padding-top: 46.8px;
   padding-bottom: 41.6px;
 }
@@ -72,8 +65,6 @@
   color: #01161F;
 }
 
-<<<<<<< HEAD
-=======
 .breadcrumb {
   padding-left: 120px;
   padding-top: 16px;
@@ -136,7 +127,6 @@
           transform: translateY(-50%);
 }
 
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -903,74 +893,6 @@ body.index .footer {
   padding: 29px;
 }
 
-<<<<<<< HEAD
-body.detail a {
-  text-decoration: none;
-}
-
-body.detail .header {
-  background-image: url(../assets/img/common/works_header@2x.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  font-family: 'Noto Serif', serif;
-}
-
-body.detail .header__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 40px 120px 10px 120px;
-}
-
-body.detail .header li {
-  display: inline;
-  padding-left: 30px;
-}
-
-body.detail .header li a {
-  color: #fff;
-  font-size: 16px;
-}
-
-body.detail .header h1 {
-  font-size: 60px;
-  color: #fff;
-  text-align: center;
-  padding-bottom: 79px;
-  letter-spacing: 0.4rem;
-}
-
-body.detail .breadcrumb {
-  padding-left: 120px;
-  padding-top: 16px;
-  font-size: 14px;
-  font-family: 'Rubik', sans-serif;
-}
-
-body.detail .breadcrumb li {
-  display: inline;
-}
-
-body.detail .breadcrumb li::after {
-  content: '/';
-  display: inline-block;
-  padding: 0 2px;
-}
-
-body.detail .breadcrumb li:last-child::after {
-  display: none;
-}
-
-body.detail .breadcrumb a {
-  color: #3E3E3E;
-}
-
-=======
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 body.detail .inner {
   max-width: 1000px;
   margin: 75px auto 0;
@@ -1052,47 +974,6 @@ body.detail .leftblock h4:before {
           transform: translateY(-50%);
 }
 
-<<<<<<< HEAD
-body.detail .rightblock__title {
-  font-size: 20px;
-  font-family: 'Noto Serif', serif;
-  padding-bottom: 22.8px;
-  padding-top: 25px;
-}
-
-body.detail .rightblock li {
-  font-size: 14px;
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  padding-bottom: 10px;
-}
-
-body.detail .rightblock li:last-child {
-  padding-bottom: 26.2px;
-}
-
-body.detail .rightblock a {
-  color: #01161F;
-  position: relative;
-  padding-left: 20px;
-}
-
-body.detail .rightblock a:before {
-  content: '';
-  width: 6px;
-  height: 10px;
-  background-image: url(../img/common/arrow.svg);
-  background-repeat: no-repeat;
-  background-size: 6px 10px;
-  background-position: center;
-  position: absolute;
-  left: 2px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-
-=======
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 body.detail .btn {
   text-align: center;
   padding-top: 91.3px;
@@ -1106,74 +987,6 @@ body.detail .btn__back {
   border-radius: 4px;
 }
 
-<<<<<<< HEAD
-body.archive a {
-  text-decoration: none;
-}
-
-body.archive .header {
-  background-image: url(../assets/img/common/works_header@2x.jpg);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  font-family: 'Noto Serif', serif;
-}
-
-body.archive .header__nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  padding: 40px 120px 10px 120px;
-}
-
-body.archive .header li {
-  display: inline;
-  padding-left: 30px;
-}
-
-body.archive .header li a {
-  color: #fff;
-  font-size: 16px;
-}
-
-body.archive .header h1 {
-  font-size: 60px;
-  color: #fff;
-  text-align: center;
-  padding-bottom: 79px;
-  letter-spacing: 0.4rem;
-}
-
-body.archive .breadcrumb {
-  padding-left: 120px;
-  padding-top: 16px;
-  font-size: 14px;
-  font-family: 'Rubik', sans-serif;
-}
-
-body.archive .breadcrumb li {
-  display: inline;
-}
-
-body.archive .breadcrumb li::after {
-  content: '/';
-  display: inline-block;
-  padding: 0 2px;
-}
-
-body.archive .breadcrumb li:last-child::after {
-  display: none;
-}
-
-body.archive .breadcrumb a {
-  color: #3E3E3E;
-}
-
-=======
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 body.archive .inner {
   max-width: 1000px;
   margin: 60px auto 0;
@@ -1183,10 +996,6 @@ body.archive .inner {
 }
 
 body.archive .leftblock {
-<<<<<<< HEAD
-  padding-top: 57.8px;
-=======
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
   padding-right: 50px;
 }
 
@@ -1199,13 +1008,10 @@ body.archive .leftblock__flex {
   padding-top: 25px;
 }
 
-<<<<<<< HEAD
-=======
 body.archive .leftblock__flex:first-child {
   padding-top: 0;
 }
 
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 body.archive .leftblock__img {
   margin-right: 29.8px;
 }
@@ -1237,45 +1043,4 @@ body.archive .leftblock p {
   letter-spacing: 0.025em;
   line-height: 1.7;
 }
-<<<<<<< HEAD
-
-body.archive .rightblock__title {
-  font-size: 20px;
-  font-family: 'Noto Serif', serif;
-  padding-bottom: 22.8px;
-  padding-top: 25px;
-}
-
-body.archive .rightblock li {
-  font-size: 14px;
-  font-family: "Yu Gothic Medium", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
-  padding-bottom: 10px;
-}
-
-body.archive .rightblock li:last-child {
-  padding-bottom: 26.2px;
-}
-
-body.archive .rightblock a {
-  color: #01161F;
-  position: relative;
-  padding-left: 20px;
-}
-
-body.archive .rightblock a:before {
-  content: '';
-  width: 6px;
-  height: 10px;
-  background-image: url(../img/common/arrow.svg);
-  background-repeat: no-repeat;
-  background-size: 6px 10px;
-  background-position: center;
-  position: absolute;
-  left: 2px;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
-}
-=======
->>>>>>> 9fa61365796a083ad6db6378a1cd2a8f4736842c
 /*# sourceMappingURL=style.css.map */
