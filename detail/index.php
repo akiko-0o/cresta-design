@@ -1,38 +1,11 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>archive</title>
-    <link rel="stylesheet" href="../assets/css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@1,700&family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+<?php
+$path = realpath(dirname(__FILE__) . '') . "/../";
+include $path . 'libs/meta.php';
+?>
 </head>
+
 <body class="detail">
-    <header class="header">
-        <div class="header__inner">
-            <h1 class="header__logo">
-                <a href="#">
-                    <img src="../assets/img/common/site-title.svg" alt="creata design">
-                </a>
-            </h1>
-            <nav>
-                <ul class="header__nav">
-                    <li><a href="#concept">Concept</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header__nav_sp sp">
-                　　<span></span>
-                　　<span></span>
-                　　<span></span>
-            </div>
-        </div>
-    </header>
+<?php include $path. 'libs/header.php'; ?>
 
     <div class="sub-mv">
         <h1>Works</h1>
@@ -64,32 +37,7 @@
             </div>
 
             <div class="rightblock">
-                <nav class="side-nav">
-                    <p class="side-nav__title">Archive</p>
-                    <ul>
-                        <li>
-                            <a href="#">2019/08</a>
-                        </li>
-                        <li>
-                            <a href="#">2019/07</a>
-                        </li>
-                        <li>
-                            <a href="#">2019/06</a>
-                        </li>
-                    </ul>
-                    <p class="side-nav__title">Category</p>
-                    <ul>
-                        <li>
-                            <a href="#">ニュース</a>
-                        </li>
-                        <li>
-                            <a href="#">イベント</a>
-                        </li>
-                        <li>
-                            <a href="#">その他</a>
-                        </li>
-                    </ul>
-                </nav>
+                <?php include $path. 'libs/side-nav.php'; ?>
             </div>
         </div>
     </main>
@@ -98,12 +46,9 @@
         <a href="#" class="btn__back">一覧へ</a>
     </div>
 
-    <footer class="footer">
-        <p>&copy;cresta.design all rights reserved</p>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
-    <script src="../assets/js/common.js"></script>
+    <?php include $path. 'libs/footer.php'; ?>
+    <?php include $path. 'libs/script.php'; ?>
 
 </body>
 </html>

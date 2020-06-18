@@ -1,40 +1,15 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>cresta design</title>
-    <!-- Font -->
-    <link href="https://fonts.googleapis.com/css?family=Noto+Serif|Noto+Serif+JP&display=swap"　rel="stylesheet">
-    <!-- css -->
-    <link rel="stylesheet" href="/assets/css/style.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+<?php
+$path = realpath(dirname(__FILE__) . '') . "/";
+include $path . 'libs/meta.php';
+?>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
+
 </head>
 
 
 <body class="index">
-    <header class="header">
-        <div class="header__inner">
-            <h1 class="header__logo">
-                <a href="#">
-                    <img src="./assets/img/common/site-title.svg" alt="creata design">
-                </a>
-            </h1>
-            <nav>
-                <ul class="header__nav">
-                    <li><a href="#concept">Concept</a></li>
-                    <li><a href="#service">Service</a></li>
-                    <li><a href="#works">Works</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-            <div class="header__nav_sp sp">
-                　　<span></span>
-                　　<span></span>
-                　　<span></span>
-            </div>
-        </div>
-    </header>
+
+    <?php include $path . 'libs/header.php';?>
 
     <div class="mv">
         <div class="slider">
@@ -151,13 +126,12 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <span>©︎cresta.design all rights reserved</span>
-    </footer>
+    <?php include $path.'libs/footer.php'?>
+    <?php include $path.'libs/script.php'?>
 
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="./assets/js/common.js"></script>
+
 
     <script>
     $(function () {
@@ -173,28 +147,7 @@
     })
 
 
-    　$('.header__nav_sp').click(function() {
-    　　$(this).toggleClass('active');
 
-    　if ($(this).hasClass('active')) {
-    　　$('.header__nav').addClass('active');
-    　} else {
-    　　$('.header__nav').removeClass('active');
-    　}
-    　});
-
-
-    $('a[href^="#"]').click(function() {
-        var speed = 500;
-        var href = $(this).attr("href");
-        var target = $(href == "#" || href == "" ? "html" : href);
-        var position = target.offset().top;
-        position = position - $("header").outerHeight();
-        var url = location.href;
-
-        $("html, body").animate({ scrollTop: position }, speed, "swing");
-        return false;
-    });
 </script>
 
 </body>
