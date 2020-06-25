@@ -1,8 +1,11 @@
 
 <?php
-$path = realpath(dirname(__FILE__) . '') . "/";
+$path = realpath(dirname(__FILE__) . '') . "/../../../../";
 include $path . 'libs/meta.php';
+// WordPressさんサイドで用意してくれるhtmlをhead内に出力してくれる関数
+wp_head();
 ?>
+
 <link href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" rel="stylesheet">
 
 </head>
@@ -129,7 +132,7 @@ include $path . 'libs/meta.php';
 
     <?php include $path.'libs/footer.php'?>
     <?php include $path.'libs/script.php'?>
-
+    <?php wp_footer(); ?>
     <script src="https://cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
 
@@ -146,8 +149,6 @@ include $path . 'libs/meta.php';
             draggable : true,
         })
     })
-
-
 
 </script>
 

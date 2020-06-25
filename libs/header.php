@@ -9,7 +9,7 @@
                 <ul class="header__nav">
                     <li><a href="#concept">Concept</a></li>
                     <li><a href="#service">Service</a></li>
-                    <li><a href="#works">Works</a></li>
+                    <li><a href="<?php echo APP_URL; ?>archive/">Works</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>

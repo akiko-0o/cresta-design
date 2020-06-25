@@ -1,6 +1,6 @@
 <?php
 $protocol = empty($_SERVER['HTTPS']) ? 'http://' : 'https://';
-$APP_URL = $protocol . $_SERVER['HTTP_HOST'] . '/cresta-design/';
+$APP_URL = $protocol . $_SERVER['HTTP_HOST'] . '/';
 define('APP_URL', $APP_URL);
 
 ?>

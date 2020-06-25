@@ -1,6 +1,9 @@
 <?php
-$path = realpath(dirname(__FILE__) . '') . "/../";
+$path = realpath(dirname(__FILE__) . '') . "/../../../../";
 include $path . 'libs/meta.php';
+// WordPressさんサイドで用意してくれるhtmlをhead内に出力してくれる関数
+wp_head();
+
 ?>
 </head>
 
@@ -15,11 +18,12 @@ include $path . 'libs/meta.php';
         <ul class="breadcrumb">
             <li><a href="/">HOME</a></li>
             <li>WORKS</li>
+            <li><span><?php the_title(); ?></span></li>
         </ul>
 
         <div class="inner">
-        <?php if ( have_posts() ):　//投稿ある場合 ?>
-            <!-- article-listのscss作る -->
+            <?php if ( have_posts() ):　//投稿ある場合 ?>
+                <!-- article-listのscss作る -->
                 <ul class="article-list">
                     <?php
                     //投稿内容を繰り返す
@@ -67,39 +71,12 @@ include $path . 'libs/meta.php';
                 </ul>
                 <?php else: ?>
                     <p class="article-list">対象の記事はございません</p>
-                <?php endif; ?>
-
+                <?php endif; ?>             
                 <?php include $path. 'libs/side-nav.php'; ?>
-
-            </div>
-
-            <div class="rightblock">
-                <?php include $path. 'libs/side-nav.php'; ?>
-            </div>
         </div>
     </main>
-
-    <div class="jumpmenu">
-        <div class="jumpmenu__wrap">
-            <a href="#" class="jumpmenu__wrap_button">&lt; PREV</a>
-            <ul>
-                <li>
-                    <a href="#">1</a>
-                </li>
-                <li>
-                    <a href="#">2</a>
-                </li>
-                <li>
-                    <a href="#">3</a>
-                </li>
-            </ul>
-            <a href="#" class="jumpmenu__wrap_button">NEXT &gt;</a>
-        </div>
-    </div>
-
-
     <?php include $path. 'libs/footer.php'; ?>
     <?php include $path. 'libs/script.php'; ?>
-
+    <?php wp_footer(); ?>
 </body>
 </html>

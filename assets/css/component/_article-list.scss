@@ -1,0 +1,51 @@
+.article-list{
+
+    > li {
+        padding: 25px 0;
+        border-bottom: #AFAFAF solid 1px;
+        &:nth-child(-n + 1){
+            padding-top: 0;
+        }
+
+        a{
+            display: flex;
+            @include hover;
+
+            figure{
+                width: 177px;
+                flex-shrink: 0;
+            }
+            > div{
+                padding-left: 30px;
+                font-family: $gothic;
+
+                time{
+                    font-size: 1.4rem;
+                    font-family: $gothic;
+                }
+                .category{
+                    font-size: 1.3rem;
+                    font-family: $rubik;
+                    color: #8B8B8B;
+                    display: inline-block;
+                    margin-left: 55px;
+                }
+                h2{
+                    font-size: 2.0rem;
+                    letter-spacing: 0.025em;
+                    line-height: 1.4em;
+                    font-family: $gothic;
+                    width: 100%;
+                    font-weight: normal;
+                    margin: 20px 0 10px;
+                }
+                p{
+                    font-size: 1.4rem;
+                    line-height: 1.714285714;
+                    letter-spacing: 0.025em;
+                    font-family: $gothic;
+                }
+            }
+        }
+    }
+}
