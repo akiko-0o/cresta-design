@@ -9,7 +9,7 @@
 
         a{
             display: flex;
-            @include hover;
+            // @include hover;
 
             figure{
                 width: 177px;
@@ -17,15 +17,15 @@
             }
             > div{
                 padding-left: 30px;
-                font-family: $gothic;
+                // font-family: $gothic;
 
                 time{
                     font-size: 1.4rem;
-                    font-family: $gothic;
+                    // font-family: $gothic;
                 }
                 .category{
                     font-size: 1.3rem;
-                    font-family: $rubik;
+                    // font-family: $rubik;
                     color: #8B8B8B;
                     display: inline-block;
                     margin-left: 55px;
@@ -34,7 +34,7 @@
                     font-size: 2.0rem;
                     letter-spacing: 0.025em;
                     line-height: 1.4em;
-                    font-family: $gothic;
+                    // font-family: $gothic;
                     width: 100%;
                     font-weight: normal;
                     margin: 20px 0 10px;
@@ -43,7 +43,7 @@
                     font-size: 1.4rem;
                     line-height: 1.714285714;
                     letter-spacing: 0.025em;
-                    font-family: $gothic;
+                    // font-family: $gothic;
                 }
             }
         }

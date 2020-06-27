@@ -1,6 +1,8 @@
 <?php
 add_theme_support('post-thumbnails');
 
+ini_set( 'display_errors', 1 );
+
 function cptui_register_my_cpts_works() {
 
 	/**
