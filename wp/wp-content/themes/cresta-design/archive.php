@@ -61,29 +61,28 @@ wp_head();
                                 <div>
                                     <time><?php echo $date; ?></time>
                                     <span class="category"><?php echo $term; ?></span>
-                                    <h2><?php echo $title; ?></h2>
-                                    <!-- これで記事の先頭から110文字の抜粋が表示される -->
-                                    <p><?php the_excerpt(); ?></p>
-                                </div>
-                            </a>
+                                        <h2><?php echo $title; ?></h2>
+                                        <!-- これで記事の先頭から110文字の抜粋が表示される -->
+                                        <p><?php the_excerpt(); ?></p>
+                                    </div>
+                                </a>
                         </li>
                         <?php endwhile;?>
                     </ul>
                     <?php else: ?>
-                        <p class="article-list">対象の記事はございません</p>
+                    <p class="article-list">対象の記事はございません</p>
+                    <?php endif; ?>                     
+                    <?php include $path. 'libs/side-nav.php'; ?>                        
+                    <?php
+                    $count_posts = wp_count_posts('works');
+                    $count = $count_posts->publish;
+                    if( $count > 10 ):
+                    ?>
+                    <nav class="pagination">
+                        <?php wp_pagenavi(); ?>
+                    </nav>
                     <?php endif; ?>
-
-                    <?php include $path. 'libs/side-nav.php'; ?>
-
-                </div>
-
-                <div class="rightblock">
-                    <?php include $path. 'libs/side-nav.php'; ?>
-                </div>
-
-                <div class="rightblock">
-                    <?php include $path. 'libs/side-nav.php'; ?>
-                </div>
+                    
         </div>
     </main>
 
